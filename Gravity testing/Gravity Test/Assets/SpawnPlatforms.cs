@@ -13,24 +13,24 @@ public class SpawnPlatforms : MonoBehaviour {
 	public bool Spawned = false;
 
 
-    private Vector2 originPosition;
-	private Vector2 offset;
+	public Vector2 originPosition;
+	public Vector2 offset = new Vector2(5, 5);
 
 	void Start(){
-		Vector2 randomPosition1 = originPosition + new Vector2 (Random.Range(0, 1), Random.Range (0, 0));
-		Instantiate(platform, randomPosition1, Quaternion.identity);
-		originPosition = randomPosition1;
+		//Vector2 randomPosition1 = originPosition + new Vector2 (Random.Range(0, 0), Random.Range (0, 0));
+		//Instantiate(platform, randomPosition1, Quaternion.identity);
+		originPosition = transform.position;
+		GetComponent<Rigidbody2D> ().AddForce (new Vector2 (0f, 100));
 	}
 
     void Update () {
-		offset = new Vector2(5, 5);
-        originPosition = transform.position;
-		if (GetComponent<Rigidbody2D>().position == (originPosition + offset) && Spawned == false) {
-			Spawn ();
-		}
+		//if (((GetComponent<Rigidbody2D>().position < (originPosition + offset)) || (GetComponent<Rigidbody2D>().position >= (originPosition)))&& Spawned == false) {
+			//print ("0w0");
+			//Spawn ();
+		//}
     }
 
-    void Spawn()
+    public void Spawn()
     {
 		Spawned = true;
 		//horizontalMax = horizontalMax + GetComponent<Rigidbody2D>().gravityScale;
