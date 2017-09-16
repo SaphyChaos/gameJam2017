@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/scenes/KatesScene.unity
+=======
+- path: Assets/scenes/debug kit.unity
+>>>>>>> 450012a37d57ebac1005b9f5047505f5bac538e1
   isLoaded: 1
   isActive: 1
