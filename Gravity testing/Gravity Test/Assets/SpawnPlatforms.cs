@@ -5,10 +5,10 @@ public class SpawnPlatforms : MonoBehaviour {
 
     public int maxPlatforms = 20;
     public GameObject platform;
-    public float horizontalMin = 2.5f;
-    public float horizontalMax = 5f;
-    public float verticalMin = -3f;
-    public float verticalMax = 3;
+    public float horizontalMin = .5f;
+    public float horizontalMax = 2f;
+    public float verticalMin = 0f;
+    public float verticalMax = .5f;
 
 
     private Vector2 originPosition;
