@@ -20,15 +20,16 @@ public class PlayerController : MonoBehaviour {
 		//tap = Input.GetTouch(0);//touches[0];
 		if (Input.GetMouseButtonDown(0))//GetTouch(0).tapCount > 0)
 			transform.position.y++;
-		if (killFloor < (transform.position.y - 5))
-			killFloor = transform.position.y - 5;
+		if (killFloor < (transform.position.y - 5.0f))
+			killFloor = transform.position.y - 5.0f;
 		x = Input.acceleration.x * speed;
 		transform.Translate(x, 0, 0);
 
-		if (transform.position.y < -5)
+		if (transform.position.y < killFloor)
 		{
-			this.transform.position = respawn.position; 	//respawn at begining
+			this.transform.position = respawn.position; 	//respawn at beginning
 			this.transform.rotation = respawn.rotation;
+			killFloor = transform.position.y - 5.0f;
 		}
 		
 	}
