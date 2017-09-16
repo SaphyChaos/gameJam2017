@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gravity Test.CSharp.Plugins", "Gravity Test.CSharp.Plugins.csproj", "{82303D9A-7928-EA79-DE0C-D3DEB17F5674}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gravity Test.CSharp.Editor.Plugins", "Gravity Test.CSharp.Editor.Plugins.csproj", "{5540DC07-539B-D236-95EE-6BF86351AA2E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82303D9A-7928-EA79-DE0C-D3DEB17F5674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82303D9A-7928-EA79-DE0C-D3DEB17F5674}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82303D9A-7928-EA79-DE0C-D3DEB17F5674}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82303D9A-7928-EA79-DE0C-D3DEB17F5674}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5540DC07-539B-D236-95EE-6BF86351AA2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5540DC07-539B-D236-95EE-6BF86351AA2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5540DC07-539B-D236-95EE-6BF86351AA2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5540DC07-539B-D236-95EE-6BF86351AA2E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
