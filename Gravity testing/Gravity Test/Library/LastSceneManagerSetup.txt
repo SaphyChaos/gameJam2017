@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/saveit.unity
+- path: C:/Users/heckman1/Documents/jam/gameJam2017/summerJam2016/Assets/scenes/boomlvl1.unity
   isLoaded: 1
   isActive: 1
