@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/kitscene.unity
+- path: C:/Users/heckman1/Documents/jam/gameJam2017/summerJam2016/Assets/scenes/KatesScene.unity
   isLoaded: 1
   isActive: 1
