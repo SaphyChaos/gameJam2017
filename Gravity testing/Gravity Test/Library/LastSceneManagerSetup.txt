@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/kitscene.unity
+- path: Assets/katescene.unity
   isLoaded: 1
   isActive: 1
