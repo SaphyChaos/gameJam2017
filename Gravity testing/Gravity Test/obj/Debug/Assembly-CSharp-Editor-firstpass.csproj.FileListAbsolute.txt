@@ -26,7 +26,6 @@ C:\Users\heckman1\Documents\jam\gameJam2017\Gravity testing\Gravity Test\Temp\bi
 C:\Users\heckman1\Documents\jam\gameJam2017\Gravity testing\Gravity Test\Temp\bin\Debug\Unity.DataContract.dll
 C:\Users\heckman1\Documents\jam\gameJam2017\Gravity testing\Gravity Test\Temp\bin\Debug\ICSharpCode.NRefactory.dll
 C:\Users\heckman1\Documents\jam\gameJam2017\Gravity testing\Gravity Test\Temp\bin\Debug\Unity.UNetWeaver.dll
-C:\Users\heckman1\Documents\jam\gameJam2017\Gravity testing\Gravity Test\Temp\bin\Debug\UnityEditor.iOS.Extensions.Xcode.dll
 C:\Users\heckman1\Documents\jam\gameJam2017\Gravity testing\Gravity Test\Temp\bin\Debug\Mono.Cecil.Mdb.dll
 C:\Users\heckman1\Documents\jam\gameJam2017\Gravity testing\Gravity Test\Temp\bin\Debug\Unity.CecilTools.dll
 C:\Users\heckman1\Documents\jam\gameJam2017\Gravity testing\Gravity Test\Temp\bin\Debug\Mono.Cecil.Pdb.dll
@@ -49,7 +48,6 @@ C:\Users\heckman1\Documents\jam\gameJam2017\Gravity testing\Gravity Test\Temp\bi
 C:\Users\heckman1\Documents\jam\gameJam2017\Gravity testing\Gravity Test\Temp\bin\Debug\UnityEditor.Purchasing.xml
 C:\Users\heckman1\Documents\jam\gameJam2017\Gravity testing\Gravity Test\Temp\bin\Debug\UnityEditor.VR.xml
 C:\Users\heckman1\Documents\jam\gameJam2017\Gravity testing\Gravity Test\Temp\bin\Debug\UnityEngine.VR.xml
-C:\Users\heckman1\Documents\jam\gameJam2017\Gravity testing\Gravity Test\Temp\bin\Debug\UnityEditor.iOS.Extensions.Xcode.xml
 C:\Users\heckman1\Documents\jam\gameJam2017\Gravity testing\Gravity Test\obj\Debug\Assembly-CSharp-Editor-firstpass.csprojResolveAssemblyReference.cache
 C:\Users\heckman1\Documents\jam\gameJam2017\Gravity testing\Gravity Test\obj\Debug\Assembly-CSharp-Editor-firstpass.dll
 C:\Users\heckman1\Documents\jam\gameJam2017\Gravity testing\Gravity Test\obj\Debug\Assembly-CSharp-Editor-firstpass.pdb

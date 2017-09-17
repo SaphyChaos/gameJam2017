@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\SpawnPlatforms.cs" />
+     <Compile Include="Assets\cameraPull.cs" />
      <Compile Include="Assets\onColision.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
