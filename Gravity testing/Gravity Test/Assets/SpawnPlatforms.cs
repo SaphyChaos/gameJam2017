@@ -20,7 +20,7 @@ public class SpawnPlatforms : MonoBehaviour {
 		//Vector2 randomPosition1 = originPosition + new Vector2 (Random.Range(0, 0), Random.Range (0, 0));
 		//Instantiate(platform, randomPosition1, Quaternion.identity);
 		originPosition = transform.position;
-		GetComponent<Rigidbody2D> ().AddForce (new Vector2 (0f, 100));
+		GetComponent<Rigidbody2D> ().AddForce (new Vector2 (0f, 800));
 	}
 
     void Update () {
@@ -43,7 +43,8 @@ public class SpawnPlatforms : MonoBehaviour {
 		*/
 		for (int i = 0; i < maxPlatforms; i++)
         {
-			Vector2 randomPosition = originPosition + new Vector2 (Random.Range(horizontalMin, horizontalMax)+ GetComponent<Rigidbody2D>().gravityScale, Random.Range (verticalMin, verticalMax));
+			print (3 / GetComponent<Rigidbody2D> ().gravityScale);
+			Vector2 randomPosition = originPosition + new Vector2 (Random.Range(horizontalMin, horizontalMax)+ 7*(3/GetComponent<Rigidbody2D>().gravityScale), Random.Range (verticalMin, verticalMax));
             Instantiate(platform, randomPosition, Quaternion.identity);
             originPosition = randomPosition;
         }
