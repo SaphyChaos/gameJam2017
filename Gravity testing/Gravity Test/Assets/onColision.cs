@@ -9,7 +9,8 @@ public class onColision : MonoBehaviour
         if(col.gameObject.tag == "platform")
         {
 			print ("helloo");
-			GetComponent<SpawnPlatforms>().Spawn();
+			GetComponent<SpawnPlatforms> ().Spawn ();
+			Destroy (col.gameObject);
         }
     }
 }
