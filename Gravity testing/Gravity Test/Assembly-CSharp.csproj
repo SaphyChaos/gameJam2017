@@ -46,11 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\SpawnPlatforms.cs" />
-     <Compile Include="Assets\cameraPull.cs" />
-     <Compile Include="Assets\followcamera.cs" />
-     <Compile Include="Assets\onColision.cs" />
-     <Compile Include="Assets\spawnPlatformsVert.cs" />
+     <Compile Include="Assets\StartGame.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
