@@ -13,4 +13,10 @@ EditorBuildSettings:
     guid: 215ace5257ae5e343a21dd4f9af5dc1f
   - enabled: 1
     path: Assets/Scenes/Game Over.unity
-    guid: 00000000000000000000000000000000
+    guid: 9575c455c90d3614e8268096f7a452c6
+  - enabled: 1
+    path: Assets/Scenes/rpgFeild.unity
+    guid: fb5f163780e4c604188bf1519e5de720
+  - enabled: 1
+    path: Assets/Scenes/Combat.unity
+    guid: 2e8061eaf3a0a1c40a1a641d6c2ac4d1

@@ -13,5 +13,10 @@ public class onColision : MonoBehaviour
 			GetComponent<SpawnPlatforms> ().Spawn ();
 			Destroy (col.gameObject);
         }
+		else if (col.gameObject.tag == "Enemy") {
+			print("aaaah");
+			//Destroy (col.gameObject);
+			Application.LoadLevel("Combat");
+		}
     }
 }

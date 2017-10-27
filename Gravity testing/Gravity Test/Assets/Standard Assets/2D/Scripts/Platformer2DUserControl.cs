@@ -54,7 +54,7 @@ namespace UnityStandardAssets._2D
             // Read the inputs.
 			bool crouch = false;//Input.GetKey(KeyCode.LeftControl);
 			float h = Input.GetAxis("Horizontal"); // We're not using andriod anymore so fuck this -> Input.acceleration.x; 
-			print("are u getting called?!?!?" + " " + h + " " + m_Jump);
+			//print("are u getting called?!?!?" + " " + h + " " + m_Jump);
             // Pass all parameters to the character control script.
             m_Character.Move(h, crouch, m_Jump);
             m_Jump = false;
