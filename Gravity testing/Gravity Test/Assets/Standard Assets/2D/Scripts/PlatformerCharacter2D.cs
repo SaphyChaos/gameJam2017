@@ -9,7 +9,7 @@ namespace UnityStandardAssets._2D
         [SerializeField] private float m_JumpForce = 400f;                  // Amount of force added when the player jumps.
         [SerializeField] private float m_GravityScaleWithHeight = 0.1f;                  // Amount of force added when the player jumps.
         [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;  // Amount of maxSpeed applied to crouching movement. 1 = 100%
-        [SerializeField] private bool m_AirControl = false;                 // Whether or not a player can steer while jumping;
+		[SerializeField] private bool m_AirControl = true;                 // Whether or not a player can steer while jumping;
         [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
 
         private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
@@ -21,6 +21,14 @@ namespace UnityStandardAssets._2D
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 
+        private enum State
+        {
+            IDLE, WALKING, ATTACKING
+        };
+        private State stateID;
+
+        private float walkything = 0f;
+
         private void Awake()
         {
             // Setting up references.
@@ -28,6 +36,7 @@ namespace UnityStandardAssets._2D
             m_CeilingCheck = transform.Find("CeilingCheck");
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
+            stateID = State.IDLE;
         }
 
 
@@ -50,12 +59,22 @@ namespace UnityStandardAssets._2D
 
             m_Rigidbody2D.gravityScale = Math.Min(3.0f/((Math.Max(1+ m_GravityScaleWithHeight * transform.position.y,1.0f))),3.0f);
             //m_Rigidbody2D.gravityScale = 3.0f / m_GravityScaleWithHeight * (transform.position.y + 1);
+
+            this.walkything = -3f * (float)(Math.Sin((3f * DateTime.Now.Second)));
+            print(this.walkything);
+            switch(this.stateID)
+            {
+                case State.IDLE:
+                    Move(this.walkything / 10, false, false);
+                    break;
+            }
+            
         }
 
 
         public void Move(float move, bool crouch, bool jump)
         {
-            //print("HECK");
+			//print("i'm moving :333 " + move + ", " + crouch + ", " + jump);
             // If crouching, check to see if the character can stand up
             if (!crouch && m_Anim.GetBool("Crouch"))
             {

@@ -25,12 +25,15 @@ namespace UnityStandardAssets._2D
 
         private void Update()
         {
-            if (!m_Jump)
+            /*if (!m_Jump)
             {
                 // Read the jump input in Update so button presses aren't missed.
 				if (Input.touchCount > 0)
-					m_Jump = true;//CrossPlatformInputManager.GetButtonDown("Jump");
-            }
+					m_Jump = true;
+            }*/
+			if (!m_Jump)
+				m_Jump = Input.GetAxis ("Jump") > 0;
+
 			//(KF)
 			if (killFloor < (transform.position.y - 25.0f))
 				killFloor = transform.position.y - 25.0f;
@@ -50,7 +53,8 @@ namespace UnityStandardAssets._2D
         {
             // Read the inputs.
 			bool crouch = false;//Input.GetKey(KeyCode.LeftControl);
-			float h = Input.acceleration.x;//CrossPlatformInputManager.GetAxis("Horizontal");
+			float h = Input.GetAxis("Horizontal"); // We're not using andriod anymore so fuck this -> Input.acceleration.x; 
+			print("are u getting called?!?!?" + " " + h + " " + m_Jump);
             // Pass all parameters to the character control script.
             m_Character.Move(h, crouch, m_Jump);
             m_Jump = false;
