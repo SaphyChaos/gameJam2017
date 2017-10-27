@@ -25,12 +25,6 @@ namespace UnityStandardAssets._2D
 
         private void Update()
         {
-            /*if (!m_Jump)
-            {
-                // Read the jump input in Update so button presses aren't missed.
-				if (Input.touchCount > 0)
-					m_Jump = true;
-            }*/
 			if (!m_Jump)
 				m_Jump = Input.GetAxis ("Jump") > 0;
 
@@ -39,11 +33,6 @@ namespace UnityStandardAssets._2D
 				killFloor = transform.position.y - 25.0f;
 			if (transform.position.y < killFloor)
 			{
-				/*
-				this.transform.position = respawn.position; 	//respawn at beginning
-				this.transform.rotation = respawn.rotation;
-				killFloor = transform.position.y - 25.0f;
-				*/
 				Application.LoadLevel ("Game Over");
 			}
         }

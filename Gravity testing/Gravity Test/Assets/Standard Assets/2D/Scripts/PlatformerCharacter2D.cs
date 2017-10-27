@@ -51,6 +51,12 @@ namespace UnityStandardAssets._2D
             {
                 if (colliders[i].gameObject != gameObject)
                     m_Grounded = true;
+				
+				//makes contact with enemy and begins fight
+				if (colliders[i].gameObject.tag == "enemy") {
+					Debug.Log (i + "Kill Z Birb!");
+					Application.LoadLevel (2);//set index number of desired stage in build
+				}
             }
             m_Anim.SetBool("Ground", m_Grounded);
 

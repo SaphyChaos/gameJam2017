@@ -1,4 +1,5 @@
 sceneSetups:
-- path: Assets/Flappy Bird Style/_Scenes/Main.unity
+- path: C:/Users/Katelyn Seitz/Documents/GitHub/gameJam2017 - Copy/Gravity testing/Gravity
+    Test/Assets/Scenes/rpgFeild.unity
   isLoaded: 1
   isActive: 1

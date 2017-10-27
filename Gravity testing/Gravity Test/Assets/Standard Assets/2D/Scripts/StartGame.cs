@@ -11,8 +11,8 @@ public class StartGame : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.touchCount > 0)
+		if (Input.GetButtonDown("Submit"))
 			//change scene to main game
-			Application.LoadLevel ("kitscene");
+			Application.LoadLevel (1);	//set index of desired RPG Field in build
 	}
 }

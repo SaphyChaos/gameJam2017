@@ -472,7 +472,7 @@ GameObject:
   - component: {fileID: 1438112213}
   - component: {fileID: 1438112215}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Birb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
