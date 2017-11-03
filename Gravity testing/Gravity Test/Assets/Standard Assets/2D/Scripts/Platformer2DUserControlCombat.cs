@@ -5,7 +5,7 @@ using UnityStandardAssets.CrossPlatformInput;
 namespace UnityStandardAssets._2D
 {
 	[RequireComponent(typeof (PlatformerCharacter2D))]
-	public class Platformer2DUserControl : MonoBehaviour
+	public class Platformer2DUserControlCombat : MonoBehaviour
 	{
 		private PlatformerCharacter2D m_Character;
 		private bool m_Jump;
@@ -13,9 +13,11 @@ namespace UnityStandardAssets._2D
 		//rudimentary kill floor setup (KF)
 		public Transform respawn;
 		private float killFloor;
+		private int AP;
 
 		void Start () {
 			killFloor = -25.0f;
+			AP = 50;
 		}
 		private void Awake()
 		{
@@ -33,6 +35,10 @@ namespace UnityStandardAssets._2D
             }*/
 			if (!m_Jump)
 				m_Jump = Input.GetAxis ("Jump") > 0;
+			if (AP <= 0) {
+				print ("out of ap!");
+				return;
+			}
 			//(KF)
 			if (killFloor < (transform.position.y - 25.0f))
 				killFloor = transform.position.y - 25.0f;
@@ -50,9 +56,19 @@ namespace UnityStandardAssets._2D
 
 		private void FixedUpdate()
 		{
+			if (AP <= 0) {
+				print ("out of ap!");
+				m_Character.Move(0, false, false);
+				return;
+			}
 			// Read the inputs.
 			bool crouch = false;//Input.GetKey(KeyCode.LeftControl);
 			float h = Input.GetAxis("Horizontal"); // We're not using andriod anymore so fuck this -> Input.acceleration.x; 
+			if (h != 0) {
+				AP -= 1;
+			}
+			//print ("fuckyou");
+			print (AP);
 			//print("are u getting called?!?!?" + " " + h + " " + m_Jump);
 			// Pass all parameters to the character control script.
 			m_Character.Move(h, crouch, m_Jump);
