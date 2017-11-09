@@ -5,9 +5,8 @@
       <File FileName="Assets\enemyAI.cs" Line="16" Column="78" />
       <File FileName="Assets\Standard Assets\2D\Scripts\Camera2DFollow.cs" Line="1" Column="1" />
       <File FileName="Assets\Standard Assets\2D\Scripts\onColision.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\2D\Scripts\PlatformerCharacter2D.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\2D\Scripts\Platformer2DUserControl.cs" Line="18" Column="23" />
-      <File FileName="Assets\Standard Assets\2D\Scripts\Platformer2DUserControlCombat.cs" Line="57" Column="29" />
+      <File FileName="Assets\Standard Assets\2D\Scripts\PlatformerCharacter2D.cs" Line="86" Column="92" />
+      <File FileName="Assets\Standard Assets\2D\Scripts\Platformer2DUserControlCombat.cs" Line="67" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
