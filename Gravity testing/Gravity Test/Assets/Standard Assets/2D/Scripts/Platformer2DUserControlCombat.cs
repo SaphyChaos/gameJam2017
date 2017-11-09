@@ -9,7 +9,7 @@ namespace UnityStandardAssets._2D
 	{
 		private PlatformerCharacter2D m_Character;
 		private bool m_Jump;
-
+		private float hbuff;
 		//rudimentary kill floor setup (KF)
 		public Transform respawn;
 		private float killFloor;
@@ -36,7 +36,7 @@ namespace UnityStandardAssets._2D
 			if (!m_Jump)
 				m_Jump = Input.GetAxis ("Jump") > 0;
 			if (AP <= 0) {
-				print ("out of ap!");
+				//print ("out of ap!");
 				return;
 			}
 			//(KF)
@@ -64,15 +64,19 @@ namespace UnityStandardAssets._2D
 			// Read the inputs.
 			bool crouch = false;//Input.GetKey(KeyCode.LeftControl);
 			float h = Input.GetAxis("Horizontal"); // We're not using andriod anymore so fuck this -> Input.acceleration.x; 
+			if (Mathf.Abs(hbuff) > Mathf.Abs(h))
+				h = 0;
 			if (h != 0) {
 				AP -= 1;
 			}
 			//print ("fuckyou");
-			print (AP);
+			//print (AP);
+			print(h);
 			//print("are u getting called?!?!?" + " " + h + " " + m_Jump);
 			// Pass all parameters to the character control script.
 			m_Character.Move(h, crouch, m_Jump);
 			m_Jump = false;
+			hbuff = h;
 		}
 	}
 }
