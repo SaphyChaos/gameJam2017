@@ -6,7 +6,9 @@ TagManager:
   tags:
   - platform
   - background
-  - enemy
+  - Enemy
+  - HP
+  - AP
   layers:
   - Default
   - TransparentFX
@@ -16,9 +18,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Blocker
+  - HP
+  - RestofUI
   - 
   - 
   - 
@@ -46,4 +48,13 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 3870452133
+    locked: 0
+  - name: HP
+    uniqueID: 3746531777
+    locked: 0
+  - name: Blocker
+    uniqueID: 810511601
+    locked: 0
+  - name: RestofUI
+    uniqueID: 3534225057
     locked: 0

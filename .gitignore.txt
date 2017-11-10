@@ -1,0 +1,2 @@
+Gravity testing/Gravity Test/Library/*
+Gravity testing/Gravity Test/Temp/*

@@ -21,8 +21,9 @@ public class Bird : MonoBehaviour
 	{
 		//float h = Input.GetAxis ("Horizontal");
 		//Don't allow control if the bird has died.
-		//speed = rb2d.GetPointVelocity;
-		//anim.SetFloat("Speed", Mathf.Abs(speed));
+		//Vector2 speed = rb2d.velocity;
+		float h = Input.GetAxis("Horizontal");
+		anim.SetFloat("Speed", Mathf.Abs(1));
 		//if (isDead == false) {
 			//Look for input to trigger a "flap".
 			//if (Input.GetMouseButtonDown(0)) 
