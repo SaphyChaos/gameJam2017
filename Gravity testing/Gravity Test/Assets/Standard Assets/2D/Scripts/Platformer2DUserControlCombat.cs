@@ -64,7 +64,8 @@ namespace UnityStandardAssets._2D
 			// Read the inputs.
 			bool crouch = false;//Input.GetKey(KeyCode.LeftControl);
 			float h = Input.GetAxis("Horizontal"); // We're not using andriod anymore so fuck this -> Input.acceleration.x; 
-			if (Mathf.Abs(hbuff) > Mathf.Abs(h))
+			float input = h;
+			if (Mathf.Abs(hbuff) > Mathf.Abs(input))
 				h = 0;
 			if (h != 0) {
 				AP -= 1;
@@ -76,7 +77,7 @@ namespace UnityStandardAssets._2D
 			// Pass all parameters to the character control script.
 			m_Character.Move(h, crouch, m_Jump);
 			m_Jump = false;
-			hbuff = h;
+			hbuff = input;
 		}
 	}
 }
