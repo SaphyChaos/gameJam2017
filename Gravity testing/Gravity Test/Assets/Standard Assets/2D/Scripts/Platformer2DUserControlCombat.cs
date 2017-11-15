@@ -13,10 +13,12 @@ namespace UnityStandardAssets._2D
 		//rudimentary kill floor setup (KF)
 		public Transform respawn;
 		private float killFloor;
-		private int AP;
+		public int AP = 50;
+		public int APStart = 50;
 
 		void Start () {
 			killFloor = -25.0f;
+			APStart = 50;
 			AP = 50;
 		}
 		private void Awake()
