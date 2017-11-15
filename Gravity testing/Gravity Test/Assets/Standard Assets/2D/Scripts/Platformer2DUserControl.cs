@@ -9,13 +9,17 @@ namespace UnityStandardAssets._2D
 	{
 		private PlatformerCharacter2D m_Character;
 		private bool m_Jump;
-
+		private float hbuff;
 		//rudimentary kill floor setup (KF)
 		public Transform respawn;
 		private float killFloor;
+		//public int AP = 50;
+		//public int APStart = 50;
 
 		void Start () {
 			killFloor = -25.0f;
+			//APStart = 50;
+			//AP = 50;
 		}
 		private void Awake()
 		{
@@ -33,6 +37,10 @@ namespace UnityStandardAssets._2D
             }*/
 			if (!m_Jump)
 				m_Jump = Input.GetAxis ("Jump") > 0;
+			//if (AP <= 0) {
+				//print ("out of ap!");
+			//	return;
+			//}
 			//(KF)
 			if (killFloor < (transform.position.y - 25.0f))
 				killFloor = transform.position.y - 25.0f;
@@ -50,14 +58,28 @@ namespace UnityStandardAssets._2D
 
 		private void FixedUpdate()
 		{
+			//if (AP <= 0) {
+			//	print ("out of ap!");
+			//	m_Character.Move(0, false, false);
+			//	return;
+			//}
 			// Read the inputs.
 			bool crouch = false;//Input.GetKey(KeyCode.LeftControl);
 			float h = Input.GetAxis("Horizontal"); // We're not using andriod anymore so fuck this -> Input.acceleration.x; 
-			print("are u getting called?!?!?" + " " + h + " " + m_Jump);
+			float input = h;
+			if (Mathf.Abs(hbuff) > Mathf.Abs(input))
+				h = 0;
+			//if (h != 0) {
+			//	AP -= 1;
+			//}
+			//print ("fuckyou");
+			//print (AP);
+			print(h);
+			//print("are u getting called?!?!?" + " " + h + " " + m_Jump);
 			// Pass all parameters to the character control script.
-			//m_Character.Move(0, crouch, m_Jump);
-			//m_Character.Move(h, crouch, m_Jump);
+			m_Character.Move(h, crouch, m_Jump);
 			m_Jump = false;
+			hbuff = input;
 		}
 	}
 }
