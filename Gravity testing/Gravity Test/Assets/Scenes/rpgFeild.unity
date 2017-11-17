@@ -418,6 +418,26 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114309531947821880, guid: a1f1ab11efea7d141b282ed5fe448fe2,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114160477527039716, guid: a1f1ab11efea7d141b282ed5fe448fe2,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114740543886390148, guid: a1f1ab11efea7d141b282ed5fe448fe2,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114309531947821880, guid: a1f1ab11efea7d141b282ed5fe448fe2,
+        type: 2}
+      propertyPath: m_JumpForce
+      value: 750
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a1f1ab11efea7d141b282ed5fe448fe2, type: 2}
   m_IsPrefabParent: 0
@@ -705,7 +725,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1968464129}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00d7d01eb4a054b4baf6e0d66f26a754, type: 3}
   m_Name: 
