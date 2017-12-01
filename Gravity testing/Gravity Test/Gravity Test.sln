@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gravity Test", "Assembly-CSharp-firstpass.csproj", "{912B6A47-57DE-BE8A-5B05-B33A64BF683A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gravity Test", "Assembly-CSharp.csproj", "{6CAD2EEE-9F21-F38B-E5CF-0A4898CE9581}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gravity Test", "Assembly-CSharp-Editor-firstpass.csproj", "{F33D19FB-2B81-BCAA-4A7E-E3A0262C2265}"
 EndProject
 Global
@@ -17,10 +15,6 @@ Global
 		{912B6A47-57DE-BE8A-5B05-B33A64BF683A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{912B6A47-57DE-BE8A-5B05-B33A64BF683A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{912B6A47-57DE-BE8A-5B05-B33A64BF683A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6CAD2EEE-9F21-F38B-E5CF-0A4898CE9581}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6CAD2EEE-9F21-F38B-E5CF-0A4898CE9581}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6CAD2EEE-9F21-F38B-E5CF-0A4898CE9581}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6CAD2EEE-9F21-F38B-E5CF-0A4898CE9581}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F33D19FB-2B81-BCAA-4A7E-E3A0262C2265}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F33D19FB-2B81-BCAA-4A7E-E3A0262C2265}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F33D19FB-2B81-BCAA-4A7E-E3A0262C2265}.Release|Any CPU.ActiveCfg = Release|Any CPU

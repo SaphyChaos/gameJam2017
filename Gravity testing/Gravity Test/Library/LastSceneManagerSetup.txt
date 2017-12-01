@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/EnemyTesting (Kate).unity
+- path: Assets/Scenes/rpgField (Kate).unity
   isLoaded: 1
   isActive: 1
