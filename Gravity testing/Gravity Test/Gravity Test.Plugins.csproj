@@ -78,6 +78,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Standard Assets\2D\Scripts\Bird.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\Camera2DFollow.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\EnemyAttack.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="Assets\Standard Assets\2D\Scripts\PlatformerCharacter2D.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\PlatformerCharacter2DHealth.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\Restarter.cs" />
+    <Compile Include="Assets\Standard Assets\2D\Scripts\SickRiff.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\SpawnPlatforms.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\StartGame.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\cameraPull.cs" />

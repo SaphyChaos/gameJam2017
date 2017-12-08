@@ -20,3 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Combat.unity
     guid: 2e8061eaf3a0a1c40a1a641d6c2ac4d1
+  - enabled: 1
+    path: Assets/Scenes/RPGFieldAfterCombat.unity
+    guid: 814112c3893d0224c8ce610c218f8bc0

@@ -8,6 +8,7 @@ namespace UnityStandardAssets._2D
 	public class Platformer2DUserControlCombat : MonoBehaviour
 	{
 		private PlatformerCharacter2D m_Character;
+        private SickRiff m_sickriff;
 		private bool m_Jump;
 		private float hbuff;
 		//rudimentary kill floor setup (KF)
@@ -21,6 +22,7 @@ namespace UnityStandardAssets._2D
         public GameObject action;
         public GameObject selection;
         public GameObject self;
+        public GameObject SpecialAttack;
         private bool canJumpAgain = true;
 
         void Start () {
@@ -31,7 +33,7 @@ namespace UnityStandardAssets._2D
 		private void Awake()
 		{
 			m_Character = GetComponent<PlatformerCharacter2D>();
-
+            m_sickriff = SpecialAttack.GetComponent<SickRiff>();
 		}
 
 
@@ -74,7 +76,7 @@ namespace UnityStandardAssets._2D
 
         private void sickRiffAttack()
         {
-
+            m_sickriff.enableIt();
         }
 
         private void FixedUpdate()
