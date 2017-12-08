@@ -8,6 +8,7 @@ public class SickRiff : MonoBehaviour {
     public Sprite sprite;
     public BoxCollider2D hitbox;
     public GameObject m_enemy;
+    private bool attackGo;
     //public GameObject MyBird;
     //public Animation animation;
     //private IEnumerator coroutine;
@@ -23,7 +24,7 @@ public class SickRiff : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         hitbox.enabled = false;
-        if (this.spriteRenderer.sprite == sprite)
+        if ((attackGo == true)&&(this.spriteRenderer.sprite == sprite))
         {
             hitbox.enabled = true;
             Color tmp = this.spriteRenderer.GetComponent<SpriteRenderer>().color;
@@ -41,7 +42,7 @@ public class SickRiff : MonoBehaviour {
         //this.spriteRenderer.sprite = sprite2;
         //this.spriteRenderer.enabled = true;
         //this.animator.enabled = true;
-
+        attackGo = true;
         animator.Play("tenor", -1, 0f);
         Color tmp = this.spriteRenderer.GetComponent<SpriteRenderer>().color;
         tmp.a = 1f;
@@ -53,6 +54,7 @@ public class SickRiff : MonoBehaviour {
         //m_enemy = GameObject.Find("Bird");
         if (col.gameObject.tag == "Enemy")
         {
+            //print("ahhh");
             m_enemy.GetComponent<Bird>().damage(50);
         }
     }
