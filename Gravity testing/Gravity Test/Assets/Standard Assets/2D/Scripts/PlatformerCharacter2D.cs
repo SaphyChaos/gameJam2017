@@ -6,7 +6,7 @@ namespace UnityStandardAssets._2D
     public class PlatformerCharacter2D : MonoBehaviour
     {
         [SerializeField] private float m_MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
-        [SerializeField] private float m_JumpForce = 400f;                  // Amount of force added when the player jumps.
+        [SerializeField] private float m_JumpForce;                  // Amount of force added when the player jumps.
         [SerializeField] private float m_GravityScaleWithHeight = 0.1f;                  // Amount of force added when the player jumps.
         [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;  // Amount of maxSpeed applied to crouching movement. 1 = 100%
 		[SerializeField] private bool m_AirControl = true;                 // Whether or not a player can steer while jumping;
@@ -14,20 +14,13 @@ namespace UnityStandardAssets._2D
 
         private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
         const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
-        private bool m_Grounded;            // Whether or not the player is grounded.
+        public bool m_Grounded;            // Whether or not the player is grounded.
         private Transform m_CeilingCheck;   // A position marking where to check for ceilings
         const float k_CeilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
         private Animator m_Anim;            // Reference to the player's animator component.
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
-
-        private enum State
-        {
-            IDLE, WALKING, ATTACKING
-        };
-        private State stateID;
-
-        private float walkything = 0f;
+		private float timer;
 
         private void Awake()
         {
@@ -36,7 +29,6 @@ namespace UnityStandardAssets._2D
             m_CeilingCheck = transform.Find("CeilingCheck");
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
-            stateID = State.IDLE;
         }
 
 
@@ -51,12 +43,6 @@ namespace UnityStandardAssets._2D
             {
                 if (colliders[i].gameObject != gameObject)
                     m_Grounded = true;
-				
-				//makes contact with enemy and begins fight
-				if (colliders[i].gameObject.tag == "enemy") {
-					Debug.Log (i + "Kill Z Birb!");
-					Application.LoadLevel (2);//set index number of desired stage in build
-				}
             }
             m_Anim.SetBool("Ground", m_Grounded);
 
@@ -65,16 +51,6 @@ namespace UnityStandardAssets._2D
 
             m_Rigidbody2D.gravityScale = Math.Min(3.0f/((Math.Max(1+ m_GravityScaleWithHeight * transform.position.y,1.0f))),3.0f);
             //m_Rigidbody2D.gravityScale = 3.0f / m_GravityScaleWithHeight * (transform.position.y + 1);
-
-            this.walkything = -3f * (float)(Math.Sin((3f * DateTime.Now.Second)));
-            print(this.walkything);
-            switch(this.stateID)
-            {
-                case State.IDLE:
-                    Move(this.walkything / 10, false, false);
-                    break;
-            }
-            
         }
 
 
@@ -104,6 +80,8 @@ namespace UnityStandardAssets._2D
                 m_Anim.SetFloat("Speed", Mathf.Abs(move));
 
                 // Move the character
+				if(move !=0)
+					move = Mathf.Sign(move);
                 m_Rigidbody2D.velocity = new Vector2(move*m_MaxSpeed, m_Rigidbody2D.velocity.y);
 
                 // If the input is moving the player right and the player is facing left...
@@ -123,10 +101,11 @@ namespace UnityStandardAssets._2D
             if (m_Grounded && jump && m_Anim.GetBool("Ground"))
             {
                 // Add a vertical force to the player.
+				timer = Time.time;
                 m_Grounded = false;
                 m_Anim.SetBool("Ground", false);
-                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
-
+				if(m_Rigidbody2D.velocity[1] == 0)
+                	m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
             }
         }
 

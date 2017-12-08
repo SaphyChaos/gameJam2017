@@ -6,6 +6,9 @@ TagManager:
   tags:
   - platform
   - background
+  - Enemy
+  - HP
+  - AP
   - enemy
   layers:
   - Default
@@ -16,10 +19,10 @@ TagManager:
   - UI
   - 
   - 
-  - Ground
-  - 
-  - 
-  - 
+  - Blocker
+  - HP
+  - RestofUI
+  - the good shit
   - 
   - 
   - 
@@ -44,6 +47,24 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: background
+    uniqueID: 537727905
+    locked: 0
+  - name: HP
+    uniqueID: 3746531777
+    locked: 0
+  - name: Blocker
+    uniqueID: 810511601
+    locked: 0
+  - name: RestofUI
+    uniqueID: 3534225057
+    locked: 0
   - name: Foreground
     uniqueID: 3870452133
+    locked: 0
+  - name: characters
+    uniqueID: 742992693
+    locked: 0
+  - name: realForeground
+    uniqueID: 2547286539
     locked: 0
