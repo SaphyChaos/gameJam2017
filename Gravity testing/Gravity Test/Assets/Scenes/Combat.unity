@@ -184,6 +184,7 @@ SpriteRenderer:
   m_Size: {x: 4.97, y: 2.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
 --- !u!4 &58092178
 Transform:
   m_ObjectHideFlags: 0
@@ -270,7 +271,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 31, y: 231}
+  m_AnchoredPosition: {x: 84.5, y: 95.46001}
   m_SizeDelta: {x: 395, y: 30}
   m_Pivot: {x: 0.5, y: 1.9786999}
 --- !u!114 &140231190
@@ -381,6 +382,7 @@ SpriteRenderer:
   m_Size: {x: 12.02, y: 6.77}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
 --- !u!1 &240578051
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,10 +541,10 @@ RectTransform:
   m_Father: {fileID: 340847451}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -322, y: 48.299995}
-  m_SizeDelta: {x: 102.9, y: 23.4}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 135, y: -198}
+  m_SizeDelta: {x: 112, y: 31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &395150478
 MonoBehaviour:
@@ -702,6 +704,7 @@ SpriteRenderer:
   m_Size: {x: 0.47523952, y: 3.2439554}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
 --- !u!1 &752447917
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,6 +800,7 @@ SpriteRenderer:
   m_Size: {x: 18.70995, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
 --- !u!1 &780264213
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,6 +896,7 @@ SpriteRenderer:
   m_Size: {x: 0.48892573, y: 4.5554547}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
 --- !u!1 &813569194
 GameObject:
   m_ObjectHideFlags: 0
@@ -1063,6 +1068,7 @@ SpriteRenderer:
   m_Size: {x: 17.04586, y: 2.7995613}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
 --- !u!4 &868614412
 Transform:
   m_ObjectHideFlags: 0
@@ -1148,6 +1154,7 @@ SpriteRenderer:
   m_Size: {x: 7.11, y: 4.84}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
 --- !u!114 &972718095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1254,6 +1261,7 @@ SpriteRenderer:
   m_Size: {x: 0.47523952, y: 3.2439554}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
 --- !u!1 &1204899489
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,6 +1410,7 @@ SpriteRenderer:
   m_Size: {x: 1.13, y: 0.69}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
 --- !u!4 &1204899495
 Transform:
   m_ObjectHideFlags: 0
@@ -1581,6 +1590,7 @@ SpriteRenderer:
   m_Size: {x: 4.55, y: 0.86}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
 --- !u!1 &1586974331
 GameObject:
   m_ObjectHideFlags: 0
@@ -1650,6 +1660,7 @@ SpriteRenderer:
   m_Size: {x: 6.26, y: 4.41}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
 --- !u!4 &1586974334
 Transform:
   m_ObjectHideFlags: 0
@@ -1745,6 +1756,7 @@ SpriteRenderer:
   m_Size: {x: 3.24, y: 3.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
 --- !u!1 &1667735544
 GameObject:
   m_ObjectHideFlags: 0
@@ -1776,10 +1788,10 @@ RectTransform:
   m_Father: {fileID: 340847451}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -96.40001, y: 89.09999}
-  m_SizeDelta: {x: 124.6, y: 129.1}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 305, y: -59}
+  m_SizeDelta: {x: 221, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1667735546
 MonoBehaviour:
@@ -1911,10 +1923,10 @@ RectTransform:
   m_Father: {fileID: 340847451}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -331.90002, y: 38.499992}
-  m_SizeDelta: {x: 90.9, y: 20.7}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 124, y: -210}
+  m_SizeDelta: {x: 99, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1836917247
 MonoBehaviour:
@@ -1991,10 +2003,10 @@ RectTransform:
   m_Father: {fileID: 340847451}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -349.90002, y: 107.5}
-  m_SizeDelta: {x: 266.6, y: 273}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 104, y: -124}
+  m_SizeDelta: {x: 287, y: 347}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1949708400
 MonoBehaviour:
@@ -2272,6 +2284,7 @@ SpriteRenderer:
   m_Size: {x: 1.55, y: 1.46}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
 --- !u!222 &1994826318
 CanvasRenderer:
   m_ObjectHideFlags: 0
