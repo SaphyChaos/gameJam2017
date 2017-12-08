@@ -24,6 +24,7 @@ namespace UnityStandardAssets._2D
         public GameObject self;
         public GameObject SpecialAttack;
         private bool canJumpAgain = true;
+        private bool stillRiffing;
 
         void Start () {
 			killFloor = -25.0f;
@@ -77,10 +78,23 @@ namespace UnityStandardAssets._2D
         private void sickRiffAttack()
         {
             m_sickriff.enableIt();
+            stillRiffing = true;
         }
 
         private void FixedUpdate()
         {
+            if (stillRiffing)
+            {
+                if (m_sickriff.hitbox.enabled == true)
+                {
+                    stillRiffing = false;
+                }
+                if (m_sickriff.hitbox.enabled == false)
+                {
+                    m_Character.Move(0, false, false);
+                    return;
+                }
+            }
             float q = Input.GetAxis("Attack1");
             if ((inSelect == true) && (q == 0)) {
                 readyToDeselect = true;

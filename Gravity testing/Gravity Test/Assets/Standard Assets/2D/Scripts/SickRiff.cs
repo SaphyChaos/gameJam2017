@@ -41,6 +41,7 @@ public class SickRiff : MonoBehaviour {
         //this.spriteRenderer.sprite = sprite2;
         //this.spriteRenderer.enabled = true;
         //this.animator.enabled = true;
+
         animator.Play("tenor", -1, 0f);
         Color tmp = this.spriteRenderer.GetComponent<SpriteRenderer>().color;
         tmp.a = 1f;
