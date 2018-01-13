@@ -87,6 +87,7 @@
     <Compile Include="Assets\FollowPlayer.cs" />
     <Compile Include="Assets\asdf.cs" />
     <Compile Include="Assets\fuckoff.cs" />
+    <Compile Include="Assets\inherit.cs" />
     <Compile Include="Assets\moveSlightly.cs" />
   </ItemGroup>
   <ItemGroup>

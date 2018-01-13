@@ -8,7 +8,11 @@ public class SickRiff : MonoBehaviour {
     public Sprite sprite;
     public BoxCollider2D hitbox;
     public GameObject m_enemy;
+    public Camera m_camera;
+    public Animator m_cameraAnimation;
     private bool attackGo;
+    public Vector3 cameraOrigonalPosition;
+    //public Vector3 hitboxLocation;
     //public GameObject MyBird;
     //public Animation animation;
     //private IEnumerator coroutine;
@@ -24,12 +28,22 @@ public class SickRiff : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         hitbox.enabled = false;
+        if((attackGo == true) && (this.spriteRenderer.sprite != sprite))
+        {
+            var hitboxLocation = transform.position;
+            //m_camera.transform.position = new Vector3(1, 1, (m_camera.transform.position.z));
+            m_camera.transform.position = new Vector3(hitboxLocation.x, hitboxLocation.y, (m_camera.transform.position.z));
+        }
         if ((attackGo == true)&&(this.spriteRenderer.sprite == sprite))
         {
             hitbox.enabled = true;
             Color tmp = this.spriteRenderer.GetComponent<SpriteRenderer>().color;
             tmp.a = 0f;
             this.spriteRenderer.GetComponent<SpriteRenderer>().color = tmp;
+            attackGo = false;
+            m_cameraAnimation.Play("cameraAnimation(-1)", -1, 0f);
+            //m_cameraAnimation.Play("default", -1, 0f);
+            //fixCamera();
             //this.spriteRenderer.enabled = false;
             //this.animator.enabled = false;
             //this.spriteRenderer.enabled = false;
@@ -42,6 +56,8 @@ public class SickRiff : MonoBehaviour {
         //this.spriteRenderer.sprite = sprite2;
         //this.spriteRenderer.enabled = true;
         //this.animator.enabled = true;
+        cameraOrigonalPosition = new Vector3(m_camera.transform.position.x, m_camera.transform.position.y, m_camera.transform.position.z);
+        m_cameraAnimation.Play("cameraAnimation(1)", -1, 0f);
         attackGo = true;
         animator.Play("tenor", -1, 0f);
         Color tmp = this.spriteRenderer.GetComponent<SpriteRenderer>().color;
@@ -57,5 +73,9 @@ public class SickRiff : MonoBehaviour {
             //print("ahhh");
             m_enemy.GetComponent<Bird>().damage(50);
         }
+    }
+    public void fixCamera()
+    {
+        m_camera.transform.position = new Vector3(cameraOrigonalPosition.x, cameraOrigonalPosition.y, cameraOrigonalPosition.z);
     }
 }
