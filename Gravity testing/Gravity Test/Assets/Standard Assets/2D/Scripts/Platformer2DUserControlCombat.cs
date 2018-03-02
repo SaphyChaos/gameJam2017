@@ -23,6 +23,7 @@ namespace UnityStandardAssets._2D
         public GameObject selection;
         public GameObject self;
         public GameObject SpecialAttack;
+        public GameObject passTurn;
         private bool canJumpAgain = true;
         private bool stillRiffing;
 
@@ -58,8 +59,11 @@ namespace UnityStandardAssets._2D
                 canJumpAgain = false;
             }
 			if (AP <= 0) {
-				//print ("out of ap!");
-				return;
+                //print ("out of ap!");
+                //Color tmp = passTurn.GetComponent<SpriteRenderer>().color;
+                //tmp.a = 1f;
+                //textBox.GetComponent<SpriteRenderer>().color = tmp;
+                return;
 			}
 			//(KF)
 			if (killFloor < (transform.position.y - 25.0f))
