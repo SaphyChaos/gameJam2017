@@ -28,13 +28,13 @@ public class SickRiff : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         hitbox.enabled = false;
-        if((attackGo == true) && (this.spriteRenderer.sprite != sprite))
+        if((attackGo == true) && (animator.GetCurrentAnimatorStateInfo(0).IsName("tenor")))
         {
             var hitboxLocation = transform.position;
             //m_camera.transform.position = new Vector3(1, 1, (m_camera.transform.position.z));
             m_camera.transform.position = new Vector3(hitboxLocation.x, hitboxLocation.y, (m_camera.transform.position.z));
         }
-        if ((attackGo == true)&&(this.spriteRenderer.sprite == sprite))
+        if ((attackGo == true)&& (animator.GetCurrentAnimatorStateInfo(0).IsName("done")))
         {
             hitbox.enabled = true;
             Color tmp = this.spriteRenderer.GetComponent<SpriteRenderer>().color;
