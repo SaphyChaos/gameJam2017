@@ -89,6 +89,7 @@
     <Compile Include="Assets\fuckoff.cs" />
     <Compile Include="Assets\inherit.cs" />
     <Compile Include="Assets\moveSlightly.cs" />
+    <Compile Include="Assets\oocPathFinding.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
