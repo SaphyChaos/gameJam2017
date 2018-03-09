@@ -74,7 +74,7 @@ namespace UnityStandardAssets._2D
 			//}
 			//print ("fuckyou");
 			//print (AP);
-			print(h);
+			//print(h);
 			//print("are u getting called?!?!?" + " " + h + " " + m_Jump);
 			// Pass all parameters to the character control script.
 			m_Character.Move(h, crouch, m_Jump);

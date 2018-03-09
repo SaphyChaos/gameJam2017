@@ -211,6 +211,11 @@ GameObject:
   m_PrefabParentObject: {fileID: 1357678184344822, guid: a1f1ab11efea7d141b282ed5fe448fe2,
     type: 2}
   m_PrefabInternal: {fileID: 695619465}
+--- !u!50 &170647863 stripped
+Rigidbody2D:
+  m_PrefabParentObject: {fileID: 50914859639021092, guid: a1f1ab11efea7d141b282ed5fe448fe2,
+    type: 2}
+  m_PrefabInternal: {fileID: 695619465}
 --- !u!4 &170647867 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4269849721907252, guid: a1f1ab11efea7d141b282ed5fe448fe2,
@@ -224,8 +229,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 234096469}
-  - component: {fileID: 234096471}
   - component: {fileID: 234096470}
+  - component: {fileID: 234096471}
   m_Layer: 11
   m_Name: lineOfSight
   m_TagString: Untagged
@@ -257,8 +262,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18a741316d2755140973b1346197341b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &234096471
-CircleCollider2D:
+  m_body: {fileID: 1438112214}
+  Player: {fileID: 170647863}
+  bird: {fileID: 1438112209}
+--- !u!61 &234096471
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -266,12 +274,22 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -2.5498276, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 5.26989, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &457940742
 GameObject:
   m_ObjectHideFlags: 0
