@@ -24,6 +24,7 @@ namespace UnityStandardAssets._2D
         public GameObject self;
         public GameObject SpecialAttack;
         public GameObject passTurn;
+        public Animator rifState;
         private bool canJumpAgain = true;
         private bool stillRiffing;
 
@@ -89,11 +90,11 @@ namespace UnityStandardAssets._2D
         {
             if (stillRiffing)
             {
-                if (m_sickriff.hitbox.enabled == true)
+                if (rifState.GetCurrentAnimatorStateInfo(0).IsName("noAnimate"))
                 {
                     stillRiffing = false;
                 }
-                if (m_sickriff.hitbox.enabled == false)
+                else
                 {
                     m_Character.Move(0, false, false);
                     return;

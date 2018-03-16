@@ -1288,7 +1288,6 @@ GameObject:
   m_Component:
   - component: {fileID: 972718093}
   - component: {fileID: 972718094}
-  - component: {fileID: 972718095}
   m_Layer: 0
   m_Name: textBox
   m_TagString: Untagged
@@ -1352,17 +1351,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
---- !u!114 &972718095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 972718092}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49fb5649d5a397d4d9e54743490e5d2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1098318582
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,6 +1480,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upForce: 0
   health: 50
+  curtL: {fileID: 174507846}
+  curtR: {fileID: 13905986}
 --- !u!60 &1204899491
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2255,7 +2245,6 @@ GameObject:
   - component: {fileID: 1994826312}
   - component: {fileID: 1994826311}
   - component: {fileID: 1994826310}
-  - component: {fileID: 1994826309}
   - component: {fileID: 1994826308}
   - component: {fileID: 1994826318}
   m_Layer: 0
@@ -2285,20 +2274,7 @@ MonoBehaviour:
   self: {fileID: 1994826307}
   SpecialAttack: {fileID: 58092175}
   passTurn: {fileID: 0}
---- !u!114 &1994826309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114459075332493138, guid: a1f1ab11efea7d141b282ed5fe448fe2,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1994826307}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dfd0477b048e21449bbcace90567b2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  animatorL: {fileID: 0}
+  rifState: {fileID: 58092176}
 --- !u!114 &1994826310
 MonoBehaviour:
   m_ObjectHideFlags: 0
