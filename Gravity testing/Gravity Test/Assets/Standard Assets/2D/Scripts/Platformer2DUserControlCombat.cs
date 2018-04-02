@@ -27,20 +27,26 @@ namespace UnityStandardAssets._2D
         public Animator rifState;
         private bool canJumpAgain = true;
         private bool stillRiffing;
+        public bool passed;
 
         void Start () {
 			killFloor = -25.0f;
 			APStart = 50;
 			AP = 50;
+            passed = false;
 		}
 		private void Awake()
 		{
 			m_Character = GetComponent<PlatformerCharacter2D>();
             m_sickriff = SpecialAttack.GetComponent<SickRiff>();
 		}
+        void OnEnable()
+        {
+            AP = APStart;
+            passed = false;
+        }
 
-
-		private void Update()
+        private void Update()
 		{
             /*if (!m_Jump)
             {
@@ -59,16 +65,21 @@ namespace UnityStandardAssets._2D
                     m_Jump = Input.GetAxis("Jump") > 0;
                 canJumpAgain = false;
             }
-			if (AP <= 0) {
-                //print ("out of ap!");
-                //Color tmp = passTurn.GetComponent<SpriteRenderer>().color;
-                //tmp.a = 1f;
-                //textBox.GetComponent<SpriteRenderer>().color = tmp;
-                return;
-			}
-			//(KF)
-			if (killFloor < (transform.position.y - 25.0f))
-				killFloor = transform.position.y - 25.0f;
+            //if (AP <= 0) {
+            //print ("out of ap!");
+            //Color tmp = passTurn.GetComponent<SpriteRenderer>().color;
+            //tmp.a = 1f;
+            //textBox.GetComponent<SpriteRenderer>().color = tmp;
+            //    return;
+            //}
+            if (Input.GetAxis("Submit") != 0)
+            {
+                passed = true;
+                AP = 0;
+            }
+                //(KF)
+            if (killFloor < (transform.position.y - 25.0f))
+			killFloor = transform.position.y - 25.0f;
 			if (transform.position.y < killFloor)
 			{
 				/*
