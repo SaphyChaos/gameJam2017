@@ -7,6 +7,7 @@ namespace UnityStandardAssets._2D
 	[RequireComponent(typeof (PlatformerCharacter2D))]
 	public class Platformer2DUserControlCombat : MonoBehaviour
 	{
+        public bool isMyTurn;
 		private PlatformerCharacter2D m_Character;
         private SickRiff m_sickriff;
 		private bool m_Jump;
@@ -29,6 +30,7 @@ namespace UnityStandardAssets._2D
         private bool stillRiffing;
 
         void Start () {
+            isMyTurn = true;
 			killFloor = -25.0f;
 			APStart = 50;
 			AP = 50;
@@ -59,15 +61,21 @@ namespace UnityStandardAssets._2D
                     m_Jump = Input.GetAxis("Jump") > 0;
                 canJumpAgain = false;
             }
-			if (AP <= 0) {
+			//if (AP <= 0) {
                 //print ("out of ap!");
                 //Color tmp = passTurn.GetComponent<SpriteRenderer>().color;
                 //tmp.a = 1f;
                 //textBox.GetComponent<SpriteRenderer>().color = tmp;
-                return;
-			}
-			//(KF)
-			if (killFloor < (transform.position.y - 25.0f))
+            //    return;
+			//}
+             //(KF)
+            if (Input.GetAxis("Submit") != 0)
+            {
+                isMyTurn = false;
+                m_Character.GetComponent<Platformer2DUserControlCombat>().enabled = false;
+            }
+
+            if (killFloor < (transform.position.y - 25.0f))
 				killFloor = transform.position.y - 25.0f;
 			if (transform.position.y < killFloor)
 			{
