@@ -5,7 +5,7 @@ using UnityEngine;
 public class birdAI : MonoBehaviour {
     public bool passed;
     private int dumbTimer;
-    public Gameobject moveScript;
+    public GameObject moveScript;
 	// Use this for initialization
 	void Start () {
         passed = false;
