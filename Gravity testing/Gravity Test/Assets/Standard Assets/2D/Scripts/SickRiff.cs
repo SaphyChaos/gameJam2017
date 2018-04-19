@@ -36,6 +36,7 @@ public class SickRiff : MonoBehaviour {
         }
         if ((attackGo == true)&& (animator.GetCurrentAnimatorStateInfo(0).IsName("done")))
         {
+            print("fip");
             hitbox.enabled = true;
             Color tmp = this.spriteRenderer.GetComponent<SpriteRenderer>().color;
             tmp.a = 0f;
@@ -68,10 +69,11 @@ public class SickRiff : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D col)
     {
         //m_enemy = GameObject.Find("Bird");
+        print("ooh");
         if (col.gameObject.tag == "Enemy")
         {
-            //print("ahhh");
-            m_enemy.GetComponent<Bird>().damage(50);
+            print("ahhh");
+            m_enemy.GetComponent<Bird>().damage(500);
         }
     }
     public void fixCamera()
