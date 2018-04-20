@@ -84,7 +84,7 @@ namespace UnityStandardAssets._2D
                     passed = true;
                 }
             }
-            m_body.velocity = new Vector2(move*2, m_body.velocity.y);
+            m_body.velocity = new Vector2(move * 2, m_body.velocity.y);
             birdAP -= 1;
 
         }

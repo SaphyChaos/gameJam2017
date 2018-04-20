@@ -1521,10 +1521,10 @@ GameObject:
   - component: {fileID: 1204899494}
   - component: {fileID: 1204899493}
   - component: {fileID: 1204899490}
-  - component: {fileID: 1204899496}
   - component: {fileID: 1204899497}
   - component: {fileID: 1204899491}
   - component: {fileID: 1204899492}
+  - component: {fileID: 1204899496}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Enemy
@@ -1738,8 +1738,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   passed: 0
   Player: {fileID: 1994826314}
-  birdAPStart: 0
-  birdAP: 0
+  birdAPStart: 50
+  birdAP: 50
   bird: {fileID: 1204899489}
   m_body: {fileID: 1204899492}
   birdAnim: {fileID: 1204899493}
