@@ -6,7 +6,7 @@ public class oocPathFinding : MonoBehaviour
 {
     //private Gameobject lineOfSight;
     public Rigidbody2D m_body;
-    public bool iSeeYouFucker;
+    private bool iSeeYouFucker;
     public Rigidbody2D Player;
     private Vector3 pcPosition;
     private float timePassed;
@@ -14,7 +14,6 @@ public class oocPathFinding : MonoBehaviour
     private int move;
     private bool m_FacingRight = false;
     public GameObject bird;
-    public Animator birdAnim;
     // Use this for initialization
     void Start()
     {
@@ -62,7 +61,6 @@ public class oocPathFinding : MonoBehaviour
         if (!iSeeYouFucker)
         {
             m_body.velocity = new Vector2(0, m_body.velocity.y);
-            birdAnim.Play("Idle", -1, 0f);
         }
     }
     void FixedUpdate()
@@ -75,7 +73,6 @@ public class oocPathFinding : MonoBehaviour
         {
             iSeeYouFucker = true;
             timer = 5f;
-            birdAnim.Play("flaping", -1, 0f);
         }
     }
     private void Flip()

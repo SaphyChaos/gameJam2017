@@ -19,7 +19,6 @@ public class Bird : MonoBehaviour
 		anim = GetComponent<Animator> ();
 		//Get and store a reference to the Rigidbody2D attached to this GameObject.
 		rb2d = GetComponent<Rigidbody2D>();
-        print("healthget1!");
         health = 100;
 	}
 
