@@ -16,6 +16,7 @@ namespace UnityStandardAssets._2D
 		private float killFloor;
 		public int AP = 50;
 		public int APStart = 50;
+        public int HP = 50;
         private bool inSelect;
         private bool readyToDeselect;
         public GameObject textBox;
@@ -31,6 +32,7 @@ namespace UnityStandardAssets._2D
 
         void Start () {
 			killFloor = -25.0f;
+            HP = 50;
 			APStart = 50;
 			AP = 50;
             passed = false;
@@ -182,5 +184,14 @@ namespace UnityStandardAssets._2D
                 m_Jump = false;
 			hbuff = input;
 		}
-	}
+        public void damage(int x)
+        {
+            //print(health);
+            HP -= x;
+            if (HP <= 0)
+            {
+                Application.LoadLevel("Game Over");
+            }
+        }
+    }
 }

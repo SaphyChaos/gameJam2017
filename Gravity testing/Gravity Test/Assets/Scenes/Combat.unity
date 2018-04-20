@@ -700,6 +700,7 @@ GameObject:
   - component: {fileID: 395150477}
   - component: {fileID: 395150479}
   - component: {fileID: 395150478}
+  - component: {fileID: 395150480}
   m_Layer: 9
   m_Name: HP
   m_TagString: HP
@@ -745,10 +746,10 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: aa60b02d91f462848bb06ce125e5759d, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -758,6 +759,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 395150476}
+--- !u!114 &395150480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 395150476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e483859f6e9f2b44833dfa773d50835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FUCK: {fileID: 395150478}
 --- !u!1 &606232688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1730,6 +1743,7 @@ MonoBehaviour:
   bird: {fileID: 1204899489}
   m_body: {fileID: 1204899492}
   birdAnim: {fileID: 1204899493}
+  protag: {fileID: 1994826307}
 --- !u!61 &1204899497
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2480,6 +2494,7 @@ MonoBehaviour:
   respawn: {fileID: 0}
   AP: 0
   APStart: 0
+  HP: 50
   textBox: {fileID: 972718092}
   action: {fileID: 1552433694}
   selection: {fileID: 1641670020}

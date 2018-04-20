@@ -91,6 +91,7 @@
     <Compile Include="Assets\fuckoff.cs" />
     <Compile Include="Assets\inCombatAI.cs" />
     <Compile Include="Assets\inherit.cs" />
+    <Compile Include="Assets\meterScriptHP.cs" />
     <Compile Include="Assets\moveSlightly.cs" />
     <Compile Include="Assets\oocPathFinding.cs" />
   </ItemGroup>
