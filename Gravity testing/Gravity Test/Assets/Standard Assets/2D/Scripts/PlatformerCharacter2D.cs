@@ -109,6 +109,10 @@ namespace UnityStandardAssets._2D
                 if (m_Rigidbody2D.velocity[1] > m_JumpForce)
                     m_Rigidbody2D.velocity = new Vector2(0f, -m_JumpForce);
             }
+            if(move == 0)
+            {
+                //m_Anim.Play("Idle", -1, 0f);
+            }
         }
 
 

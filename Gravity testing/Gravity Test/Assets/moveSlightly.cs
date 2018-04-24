@@ -15,10 +15,10 @@ public class moveSlightly : MonoBehaviour {
         var otherPos = self.transform.position;
         flipper += 1;
         if (flipper < 30) {
-            transform.position = new Vector3(otherPos.x + .001f, otherPos.y, otherPos.z);
+            transform.position = new Vector3(otherPos.x + .1f, otherPos.y, otherPos.z);
         }
         else{
-            transform.position = new Vector3(otherPos.x - .001f, otherPos.y, otherPos.z);
+            transform.position = new Vector3(otherPos.x - .1f, otherPos.y, otherPos.z);
         }
         if (flipper >= 90)
             flipper = -30;

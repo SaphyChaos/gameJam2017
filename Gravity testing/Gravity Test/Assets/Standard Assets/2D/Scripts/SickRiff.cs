@@ -12,6 +12,7 @@ public class SickRiff : MonoBehaviour {
     public Animator m_cameraAnimation;
     private bool attackGo;
     public Vector3 cameraOrigonalPosition;
+    private bool hitHim;
     //public Vector3 hitboxLocation;
     //public GameObject MyBird;
     //public Animation animation;
@@ -19,6 +20,7 @@ public class SickRiff : MonoBehaviour {
     // Use this for initialization
     void Start () {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        hitHim = false;
         //print("wew");
     }
     private void Awake()
@@ -27,7 +29,7 @@ public class SickRiff : MonoBehaviour {
     }
     // Update is called once per frame
     void Update () {
-        hitbox.enabled = false;
+        //hitbox.enabled = false;
         if((attackGo == true) && (animator.GetCurrentAnimatorStateInfo(0).IsName("tenor")))
         {
             var hitboxLocation = transform.position;
@@ -37,7 +39,8 @@ public class SickRiff : MonoBehaviour {
         if ((attackGo == true)&& (animator.GetCurrentAnimatorStateInfo(0).IsName("done")))
         {
             print("fip");
-            hitbox.enabled = true;
+            //hitbox.enabled = true;
+            hitHim = true;
             Color tmp = this.spriteRenderer.GetComponent<SpriteRenderer>().color;
             tmp.a = 0f;
             this.spriteRenderer.GetComponent<SpriteRenderer>().color = tmp;
@@ -66,14 +69,15 @@ public class SickRiff : MonoBehaviour {
         this.spriteRenderer.GetComponent<SpriteRenderer>().color = tmp;
 
     }
-    void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerStay2D(Collider2D col)
     {
         //m_enemy = GameObject.Find("Bird");
         print("ooh");
-        if (col.gameObject.tag == "Enemy")
+        if ((col.gameObject.tag == "Enemy") && (hitHim == true))
         {
             print("ahhh");
             m_enemy.GetComponent<Bird>().damage(500);
+            hitHim = false;
         }
     }
     public void fixCamera()

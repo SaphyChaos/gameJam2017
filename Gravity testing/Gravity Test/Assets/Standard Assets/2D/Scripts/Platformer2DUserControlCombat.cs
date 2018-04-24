@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.UI;
 
 namespace UnityStandardAssets._2D
 {
@@ -69,9 +70,9 @@ namespace UnityStandardAssets._2D
             }
             //if (AP <= 0) {
             //print ("out of ap!");
-            //Color tmp = passTurn.GetComponent<SpriteRenderer>().color;
+            //Color tmp = passTurn.GetComponent<Image>().color;
             //tmp.a = 1f;
-            //textBox.GetComponent<SpriteRenderer>().color = tmp;
+            //textBox.GetComponent<Image>().color = tmp;
             //    return;
             //}
             if (Input.GetAxis("Submit") != 0)
@@ -123,20 +124,20 @@ namespace UnityStandardAssets._2D
             }
             if ((q > 0) && (readyToDeselect == false) && (m_Jump == false) && (m_Character.m_Grounded == true)) {
                 inSelect = true;
-                Color tmp = textBox.GetComponent<SpriteRenderer>().color;
+                Color tmp = textBox.GetComponent<Image>().color;
                 tmp.a = 1f;
-                textBox.GetComponent<SpriteRenderer>().color = tmp;
-                action.GetComponent<SpriteRenderer>().color = tmp;
-                selection.GetComponent<SpriteRenderer>().color = tmp;
+                textBox.GetComponent<Image>().color = tmp;
+                action.GetComponent<Image>().color = tmp;
+                selection.GetComponent<Image>().color = tmp;
             }
             if ((q > 0) && (readyToDeselect == true) && (m_Jump == false) &&(m_Character.m_Grounded == true))
             {
                 inSelect = false;
-                Color tmp = textBox.GetComponent<SpriteRenderer>().color;
+                Color tmp = textBox.GetComponent<Image>().color;
                 tmp.a = 0f;
-                textBox.GetComponent<SpriteRenderer>().color = tmp;
-                action.GetComponent<SpriteRenderer>().color = tmp;
-                selection.GetComponent<SpriteRenderer>().color = tmp;
+                textBox.GetComponent<Image>().color = tmp;
+                action.GetComponent<Image>().color = tmp;
+                selection.GetComponent<Image>().color = tmp;
             }
             if (inSelect == true)
             {
@@ -144,11 +145,11 @@ namespace UnityStandardAssets._2D
                 if (m_Jump == true)
                 {
                     inSelect = false;
-                    Color tmp = textBox.GetComponent<SpriteRenderer>().color;
+                    Color tmp = textBox.GetComponent<Image>().color;
                     tmp.a = 0f;
-                    textBox.GetComponent<SpriteRenderer>().color = tmp;
-                    action.GetComponent<SpriteRenderer>().color = tmp;
-                    selection.GetComponent<SpriteRenderer>().color = tmp;
+                    textBox.GetComponent<Image>().color = tmp;
+                    action.GetComponent<Image>().color = tmp;
+                    selection.GetComponent<Image>().color = tmp;
                     sickRiffAttack();
                     m_Jump = false;
                     canJumpAgain = false;

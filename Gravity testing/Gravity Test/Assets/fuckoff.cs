@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class fuckoff : MonoBehaviour {
-    public Rigidbody m_Rigidbody;
+    private Rigidbody m_Rigidbody;
     // Use this for initialization
     void Start () {
+        m_Rigidbody = GetComponent<Rigidbody>();
         m_Rigidbody.AddForce(new Vector3(0f, 200, -400));
     }
 	

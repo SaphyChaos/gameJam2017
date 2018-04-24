@@ -22,11 +22,13 @@ namespace UnityStandardAssets._2D
             {
                 player1.GetComponent<Platformer2DUserControlCombat>().enabled = false;
                 enemy1.GetComponent<birdAI>().enabled = true;
+                enemy1.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             }
             if (enemy1.GetComponent<birdAI>().passed)
             {
                 enemy1.GetComponent<birdAI>().enabled = false;
                 player1.GetComponent<Platformer2DUserControlCombat>().enabled = true;
+                enemy1.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             }
             /*
             if ((enemy1.GetComponent<birdAI>().passed) && (player1.GetComponent<Platformer2DUserControlCombat>().passed))
