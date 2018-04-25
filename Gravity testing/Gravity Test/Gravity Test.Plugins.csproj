@@ -94,6 +94,7 @@
     <Compile Include="Assets\Standard Assets\2D\Scripts\SpawnPlatforms.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\StartGame.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\cameraPull.cs" />
+    <Compile Include="Assets\Standard Assets\2D\Scripts\dogHP.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\followcamera.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\onColision.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\spawnPlatformsVert.cs" />

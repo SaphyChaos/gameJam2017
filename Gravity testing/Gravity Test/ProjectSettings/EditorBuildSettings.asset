@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/kitscene.unity
     guid: 47ccea42e6d808a45b5fdaf903567f3c
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Start.unity
     guid: 215ace5257ae5e343a21dd4f9af5dc1f
   - enabled: 1

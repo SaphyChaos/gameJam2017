@@ -11,31 +11,38 @@ namespace UnityStandardAssets._2D
 		private PlatformerCharacter2D m_Character;
         private SickRiff m_sickriff;
 		private bool m_Jump;
-		private float hbuff;
+        private int m_selectMove;
+        private int selectState;
+        private float hbuff;
 		//rudimentary kill floor setup (KF)
 		public Transform respawn;
 		private float killFloor;
-		public int AP = 50;
-		public int APStart = 50;
-        public int HP = 50;
+		public int AP;
+		public int APStart;
+        public int HPStart;
+        public int HP;
         private bool inSelect;
         private bool readyToDeselect;
+        private bool selectBool;
         public GameObject textBox;
         public GameObject action;
+        public GameObject basicAttack;
         public GameObject selection;
         public GameObject self;
         public GameObject SpecialAttack;
         public GameObject passTurn;
         public Animator rifState;
+        public Animator dog;
         private bool canJumpAgain = true;
         private bool stillRiffing;
         public bool passed;
 
         void Start () {
 			killFloor = -25.0f;
-            HP = 50;
-			APStart = 50;
-			AP = 50;
+            HPStart = 50;
+            HP = dogHP.HP;
+			APStart = 30;
+			AP = 30;
             passed = false;
 		}
 		private void Awake()
@@ -47,6 +54,8 @@ namespace UnityStandardAssets._2D
         {
             AP = APStart;
             passed = false;
+            m_sickriff.hitHim = false;
+            m_sickriff.hitHimBasic = false;
         }
 
         private void Update()
@@ -58,6 +67,7 @@ namespace UnityStandardAssets._2D
 					m_Jump = true;
             }*/
             //print(Input.GetAxis("Jump"));
+            dogHP.HP = HP;
             if (Input.GetAxis("Jump") == 0)
             {
                 canJumpAgain = true;
@@ -99,6 +109,12 @@ namespace UnityStandardAssets._2D
             m_sickriff.enableIt();
             stillRiffing = true;
         }
+        private void doBasicAttack()
+        {
+            m_sickriff.enableItBasic();
+            dog.Play("guitarSmash", -1, 0f);
+            stillRiffing = true;
+        }
 
         private void FixedUpdate()
         {
@@ -126,8 +142,17 @@ namespace UnityStandardAssets._2D
                 inSelect = true;
                 Color tmp = textBox.GetComponent<Image>().color;
                 tmp.a = 1f;
+                Color fade = action.GetComponent<Image>().color;
+                fade.a = .25f;
                 textBox.GetComponent<Image>().color = tmp;
-                action.GetComponent<Image>().color = tmp;
+                if (AP < 30)
+                    action.GetComponent<Image>().color = fade;
+                else
+                    action.GetComponent<Image>().color = tmp;
+                if (AP < 5)
+                    basicAttack.GetComponent<Image>().color = fade;
+                else
+                    basicAttack.GetComponent<Image>().color = tmp;
                 selection.GetComponent<Image>().color = tmp;
             }
             if ((q > 0) && (readyToDeselect == true) && (m_Jump == false) &&(m_Character.m_Grounded == true))
@@ -138,11 +163,47 @@ namespace UnityStandardAssets._2D
                 textBox.GetComponent<Image>().color = tmp;
                 action.GetComponent<Image>().color = tmp;
                 selection.GetComponent<Image>().color = tmp;
+                basicAttack.GetComponent<Image>().color = tmp;
             }
             if (inSelect == true)
             {
+                if(selectBool == true){
+                    if (Input.GetAxis("Vertical") > 0)
+                        m_selectMove = 1;
+                    else if (Input.GetAxis("Vertical") < 0)
+                        m_selectMove = -1;
+                }
+                if (Input.GetAxis("Vertical") == 0)
+                    m_selectMove = 0;
+                if (Input.GetAxis("Vertical") == 0)
+                    selectBool = true;
+                else
+                    selectBool = false;
                 m_Jump = Input.GetAxis("Jump") > 0;
-                if (m_Jump == true)
+                if(m_selectMove == 1)
+                {
+                    if (selectState == 0)
+                        selectState = 0;
+                    else
+                        selectState -= 1;
+                }
+                if (m_selectMove == -1)
+                {
+                    if (selectState == 1)
+                        selectState = 1;
+                    else
+                        selectState += 1;
+                }
+                if(selectState == 0)
+                {
+                    selection.transform.position = new Vector3(selection.transform.position.x, action.transform.position.y, selection.transform.position.z);
+                }
+                else if (selectState == 1)
+                {
+                    selection.transform.position = new Vector3(selection.transform.position.x, basicAttack.transform.position.y, selection.transform.position.z);
+                }
+
+                if ((m_Jump == true) && (AP >= 30) && (selectState == 0))
                 {
                     inSelect = false;
                     Color tmp = textBox.GetComponent<Image>().color;
@@ -150,10 +211,28 @@ namespace UnityStandardAssets._2D
                     textBox.GetComponent<Image>().color = tmp;
                     action.GetComponent<Image>().color = tmp;
                     selection.GetComponent<Image>().color = tmp;
+                    basicAttack.GetComponent<Image>().color = tmp;
                     sickRiffAttack();
                     m_Jump = false;
                     canJumpAgain = false;
                     m_Character.Move(0, false, false);
+                    AP = 0;
+                    return;
+                }
+                if ((m_Jump == true) && (AP >= 5) && (selectState == 1))
+                {
+                    inSelect = false;
+                    Color tmp = textBox.GetComponent<Image>().color;
+                    tmp.a = 0f;
+                    textBox.GetComponent<Image>().color = tmp;
+                    action.GetComponent<Image>().color = tmp;
+                    selection.GetComponent<Image>().color = tmp;
+                    basicAttack.GetComponent<Image>().color = tmp;
+                    doBasicAttack();
+                    m_Jump = false;
+                    canJumpAgain = false;
+                    m_Character.Move(0, false, false);
+                    AP = 0;
                     return;
                 }
             }
@@ -162,8 +241,10 @@ namespace UnityStandardAssets._2D
                 return;
             }
             if (AP <= 0) {
-				//print ("out of ap!");
-				m_Character.Move(0, false, false);
+                //print ("out of ap!");
+                m_sickriff.hitHim = false;
+                m_sickriff.hitHimBasic = false;
+                m_Character.Move(0, false, false);
 				return;
 			}
 			// Read the inputs.

@@ -12,7 +12,8 @@ public class SickRiff : MonoBehaviour {
     public Animator m_cameraAnimation;
     private bool attackGo;
     public Vector3 cameraOrigonalPosition;
-    private bool hitHim;
+    public bool hitHim;
+    public bool hitHimBasic;
     //public Vector3 hitboxLocation;
     //public GameObject MyBird;
     //public Animation animation;
@@ -21,6 +22,7 @@ public class SickRiff : MonoBehaviour {
     void Start () {
         spriteRenderer = GetComponent<SpriteRenderer>();
         hitHim = false;
+        hitHimBasic = false;
         //print("wew");
     }
     private void Awake()
@@ -69,16 +71,39 @@ public class SickRiff : MonoBehaviour {
         this.spriteRenderer.GetComponent<SpriteRenderer>().color = tmp;
 
     }
+    public void enableItBasic()
+    {
+        //this.spriteRenderer.sprite = sprite2;
+        //this.spriteRenderer.enabled = true;
+        //this.animator.enabled = true;
+        //cameraOrigonalPosition = new Vector3(m_camera.transform.position.x, m_camera.transform.position.y, m_camera.transform.position.z);
+        //m_cameraAnimation.Play("cameraAnimation(1)", -1, 0f);
+        attackGo = true;
+        animator.Play("guitarSmash", -1, 0f);
+        hitHimBasic = true;
+        //Color tmp = this.spriteRenderer.GetComponent<SpriteRenderer>().color;
+        //tmp.a = 1f;
+        //this.spriteRenderer.GetComponent<SpriteRenderer>().color = tmp;
+
+    }
     void OnTriggerStay2D(Collider2D col)
     {
         //m_enemy = GameObject.Find("Bird");
-        print("ooh");
-        if ((col.gameObject.tag == "Enemy") && (hitHim == true))
+        //print("ooh");
+        if ((col.gameObject.tag == "Enemy") && (hitHimBasic == true) && (hitHim == true))
         {
             print("ahhh");
+            m_enemy.GetComponent<Bird>().damage(50);
+            hitHim = false;
+            hitHimBasic = false;
+        }
+        else  if ((col.gameObject.tag == "Enemy") && (hitHim == true))
+        {
+            //print("ahhh");
             m_enemy.GetComponent<Bird>().damage(500);
             hitHim = false;
         }
+
     }
     public void fixCamera()
     {

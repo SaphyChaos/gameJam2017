@@ -27,7 +27,7 @@ namespace UnityStandardAssets._2D
         void Update()
         {
             frak = playerScript.HP;
-            FUCK.fillAmount = (frak / playerScript.APStart);
+            FUCK.fillAmount = (frak / playerScript.HPStart);
         }
     }
 }

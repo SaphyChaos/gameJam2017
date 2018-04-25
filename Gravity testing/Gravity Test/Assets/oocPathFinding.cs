@@ -52,7 +52,7 @@ public class oocPathFinding : MonoBehaviour
         if (iSeeYouFucker)
         {
             timePassed += Time.deltaTime;
-            print(timePassed);
+            //print(timePassed);
         }
         if (timePassed >= timer)
         {
