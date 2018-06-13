@@ -1,0 +1,29 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+<<<<<<< HEAD
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\2D\Scripts\AIFly.cs">
+    <Files>
+      <File FileName="Assets\Standard Assets\2D\Scripts\Platformer2DUserControl.cs" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets\2D\Scripts\onColision.cs" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets\2D\Scripts\PlatformerCharacter2D.cs" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets\2D\Scripts\AIPatrol.cs" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets\2D\Scripts\AIFly.cs" Line="12" Column="25" />
+      <File FileName="Assets\Standard Assets\2D\Scripts\AIWalk.cs" Line="57" Column="7" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\2D\Scripts\PlatformerCharacter2D.cs">
+    <Files>
+      <File FileName="Assets\enemyAI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets\2D\Scripts\Camera2DFollow.cs" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets\2D\Scripts\onColision.cs" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets\2D\Scripts\PlatformerCharacter2D.cs" Line="56" Column="60" />
+      <File FileName="Assets\Standard Assets\2D\Scripts\MeterScript.cs" Line="29" Column="1" />
+      <File FileName="Assets\Standard Assets\2D\Scripts\Platformer2DUserControl.cs" Line="8" Column="38" />
+      <File FileName="Assets\Standard Assets\2D\Scripts\cameraPull.cs" Line="1" Column="1" />
+>>>>>>> 23750e7d45ce4e25508755aed509ff6f7a67bd04
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

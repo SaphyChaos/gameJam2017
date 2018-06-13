@@ -1,0 +1,82 @@
+Initialize engine version: 5.6.5f1 (2cac56bf7bb6)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) HD Graphics 620 (ID=0x5916)
+    Vendor:   Intel
+    VRAM:     2111 MB
+    Driver:   22.20.16.4836
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\kithe\Documents\Unity Projects\gameJam2017\Gravity testing\Gravity Test\dogStarDemo_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\kithe\Documents\Unity Projects\gameJam2017\Gravity testing\Gravity Test\dogStarDemo_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\kithe\Documents\Unity Projects\gameJam2017\Gravity testing\Gravity Test\dogStarDemo_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\kithe\Documents\Unity Projects\gameJam2017\Gravity testing\Gravity Test\dogStarDemo_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\kithe\Documents\Unity Projects\gameJam2017\Gravity testing\Gravity Test\dogStarDemo_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\kithe\Documents\Unity Projects\gameJam2017\Gravity testing\Gravity Test\dogStarDemo_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\kithe\Documents\Unity Projects\gameJam2017\Gravity testing\Gravity Test\dogStarDemo_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\kithe\Documents\Unity Projects\gameJam2017\Gravity testing\Gravity Test\dogStarDemo_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\kithe\Documents\Unity Projects\gameJam2017\Gravity testing\Gravity Test\dogStarDemo_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\kithe\Documents\Unity Projects\gameJam2017\Gravity testing\Gravity Test\dogStarDemo_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\kithe\Documents\Unity Projects\gameJam2017\Gravity testing\Gravity Test\dogStarDemo_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\kithe\Documents\Unity Projects\gameJam2017\Gravity testing\Gravity Test\dogStarDemo_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.184 seconds
+Platform assembly: C:\Users\kithe\Documents\Unity Projects\gameJam2017\Gravity testing\Gravity Test\dogStarDemo_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\kithe\Documents\Unity Projects\gameJam2017\Gravity testing\Gravity Test\dogStarDemo_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 2.830352 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.308861 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 473.
+Total: 0.258643 ms (FindLiveObjects: 0.050973 ms CreateObjectMapping: 0.020011 ms MarkObjects: 0.171799 ms  DeleteObjects: 0.013970 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.275358 ms
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 692.
+Total: 1.043258 ms (FindLiveObjects: 0.056637 ms CreateObjectMapping: 0.064566 ms MarkObjects: 0.485192 ms  DeleteObjects: 0.434974 ms)
+
+fip
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+dead!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.510918 ms
+
+Unloading 173 unused Assets to reduce memory usage. Loaded Objects now: 510.
+Total: 0.665676 ms (FindLiveObjects: 0.033982 ms CreateObjectMapping: 0.034737 ms MarkObjects: 0.205404 ms  DeleteObjects: 0.390797 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.638868 ms
+
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 692.
+Total: 0.438750 ms (FindLiveObjects: 0.028318 ms CreateObjectMapping: 0.030961 ms MarkObjects: 0.203516 ms  DeleteObjects: 0.174820 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.612815 ms
+
+Unloading 259 unused Assets to reduce memory usage. Loaded Objects now: 301.
+Total: 0.642266 ms (FindLiveObjects: 0.024165 ms CreateObjectMapping: 0.025297 ms MarkObjects: 0.111009 ms  DeleteObjects: 0.481416 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.235611 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 479.
+Total: 0.289605 ms (FindLiveObjects: 0.094773 ms CreateObjectMapping: 0.038513 ms MarkObjects: 0.142348 ms  DeleteObjects: 0.012460 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.482927 ms
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 692.
+Total: 0.458384 ms (FindLiveObjects: 0.032094 ms CreateObjectMapping: 0.027941 ms MarkObjects: 0.206159 ms  DeleteObjects: 0.191433 ms)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: b14 -> priority: 1 
+  Thread -> id: 2544 -> priority: 1 
