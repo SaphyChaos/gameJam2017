@@ -21,6 +21,7 @@ namespace UnityStandardAssets._2D
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 		private float timer;
+        private float timePassed;
 
         private void Awake()
         {
@@ -54,7 +55,7 @@ namespace UnityStandardAssets._2D
         }
 
 
-        public void Move(float move, bool crouch, bool jump)
+        public void Move(float move, bool crouch, bool jump, bool shift)
         {
 			//print("i'm moving :333 " + move + ", " + crouch + ", " + jump);
             // If crouching, check to see if the character can stand up
@@ -101,15 +102,43 @@ namespace UnityStandardAssets._2D
             if (m_Grounded && jump && m_Anim.GetBool("Ground"))
             {
                 // Add a vertical force to the player.
-				timer = Time.time;
                 m_Grounded = false;
                 m_Anim.SetBool("Ground", false);
 				if(m_Rigidbody2D.velocity[1] < 5)
                 	m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
                 if (m_Rigidbody2D.velocity[1] > m_JumpForce)
                     m_Rigidbody2D.velocity = new Vector2(0f, -m_JumpForce);
+                    
             }
-            if(move == 0)
+            if (m_Grounded && shift && m_Anim.GetBool("Ground"))
+            {
+                timePassed = timePassed - timer;
+                timer = Time.time;
+                timePassed = timePassed + timer;
+                print(timePassed);
+                if (timePassed > .75f)
+                {
+                    print("heh");
+                    this.gameObject.GetComponent<Platformer2DUserControl>().m_Shift = false;
+                    timePassed = 0;
+                }
+                if (timePassed > .2f)
+                {
+                    if (Input.GetAxis("Shift") == 0)
+                        m_Rigidbody2D.velocity = new Vector2(move * m_MaxSpeed * 2, m_Rigidbody2D.velocity.y);
+                    else
+                    {
+                        m_Rigidbody2D.velocity = new Vector2(move * m_MaxSpeed, m_Rigidbody2D.velocity.y);
+                        timePassed = 0;
+                        this.gameObject.GetComponent<Platformer2DUserControl>().m_Shift = false;
+                    }
+                }
+                else
+                    m_Rigidbody2D.velocity = new Vector2(move * m_MaxSpeed * .5f, m_Rigidbody2D.velocity.y);
+                //timePassed = 0;
+            }
+
+            if (move == 0)
             {
                 //m_Anim.Play("Idle", -1, 0f);
             }

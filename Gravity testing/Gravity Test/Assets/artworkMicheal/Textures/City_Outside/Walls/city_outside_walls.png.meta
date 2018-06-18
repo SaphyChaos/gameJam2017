@@ -11,6 +11,15 @@ TextureImporter:
     21300012: city_outside_walls_6
     21300014: city_outside_walls_7
     21300016: city_outside_walls_8
+    21300018: city_outside_walls_9
+    21300020: city_outside_walls_10
+    21300022: city_outside_walls_11
+    21300024: city_outside_walls_12
+    21300026: city_outside_walls_13
+    21300028: city_outside_walls_14
+    21300030: city_outside_walls_15
+    21300032: city_outside_walls_16
+    21300034: city_outside_walls_17
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -48,13 +57,13 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 0
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -67,10 +76,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -78,10 +87,10 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -94,18 +103,18 @@ TextureImporter:
       name: city_outside_walls_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 769
-        width: 256
-        height: 256
+        x: 17
+        y: 800
+        width: 225
+        height: 225
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01e42bb598598274a8f380359845ce19
+      spriteID: 99ba90214b8bf83409f9f6abc45b70d6
       vertices: []
       indices: 
       edges: []
@@ -115,17 +124,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 769
-        width: 256
-        height: 256
+        y: 768.75
+        width: 256.2
+        height: 256.25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 510a002e1f5d0e047a508167321c9a5e
+      spriteID: c6cd6a0d85b0ec644ab457246e40d847
       vertices: []
       indices: 
       edges: []
@@ -134,18 +143,18 @@ TextureImporter:
       name: city_outside_walls_2
       rect:
         serializedVersion: 2
-        x: 512
-        y: 769
-        width: 256
-        height: 256
+        x: 525
+        y: 800
+        width: 225
+        height: 225
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4acffe7385cc160469e1a69c3d9597a8
+      spriteID: 3cf8e277cc4ebc5448142a2a050bc114
       vertices: []
       indices: 
       edges: []
@@ -154,18 +163,18 @@ TextureImporter:
       name: city_outside_walls_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 513
-        width: 256
+        x: 765
+        y: 769
+        width: 259
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4de52d5d9586313449551353559190a6
+      spriteID: 1e36b775f42ddea4ea5d21db6b946676
       vertices: []
       indices: 
       edges: []
@@ -174,18 +183,18 @@ TextureImporter:
       name: city_outside_walls_4
       rect:
         serializedVersion: 2
-        x: 256
-        y: 513
-        width: 256
-        height: 256
+        x: 1024
+        y: 768.75
+        width: 256.2
+        height: 256.25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fc06e15c15004a49b32055d3190493b
+      spriteID: 4186aa978315a5841b434578258b54ce
       vertices: []
       indices: 
       edges: []
@@ -194,18 +203,18 @@ TextureImporter:
       name: city_outside_walls_5
       rect:
         serializedVersion: 2
-        x: 512
-        y: 513
-        width: 256
-        height: 256
+        x: 0
+        y: 512.75
+        width: 256.2
+        height: 256.25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbe7c54ade643c942b65ad8b07ff6bad
+      spriteID: 5223163444b0ee14781deb0b1bc2f8ee
       vertices: []
       indices: 
       edges: []
@@ -214,18 +223,18 @@ TextureImporter:
       name: city_outside_walls_6
       rect:
         serializedVersion: 2
-        x: 768
-        y: 513
-        width: 256
-        height: 256
+        x: 256
+        y: 512.75
+        width: 256.2
+        height: 256.25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b991fbdbac5545a4aabce121cfee0e75
+      spriteID: ecb371aabd3c7d443a5a5eccf4e47e3f
       vertices: []
       indices: 
       edges: []
@@ -234,18 +243,18 @@ TextureImporter:
       name: city_outside_walls_7
       rect:
         serializedVersion: 2
-        x: 0
-        y: 257
+        x: 510
+        y: 511
         width: 256
-        height: 256
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04bc6e6545527c248b61593125df141e
+      spriteID: 12b1aa7b5c9740b4c83aedbdef05ef1b
       vertices: []
       indices: 
       edges: []
@@ -254,18 +263,198 @@ TextureImporter:
       name: city_outside_walls_8
       rect:
         serializedVersion: 2
-        x: 256
-        y: 257
-        width: 256
-        height: 256
+        x: 768
+        y: 512.75
+        width: 256.2
+        height: 256.25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11402e1561d247147825e7708af686e7
+      spriteID: 513148e9acccbfa478596950e3a90b66
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_outside_walls_9
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512.75
+        width: 256.2
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36df6f9620cb48541bc7595b88457c95
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_outside_walls_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256.75
+        width: 256.2
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e50d39b24c9c9e5488f4f91a7ebb0a58
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_outside_walls_11
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256.75
+        width: 256.2
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a04923ff257d1046a1fa0c01fc60fe2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_outside_walls_12
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256.75
+        width: 256.2
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b04391d3b31bc084690b127bbfea2131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_outside_walls_13
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256.75
+        width: 256.2
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f6d21ce12906ba47a1f6384d224260b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_outside_walls_14
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 256.75
+        width: 256.2
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1be59e722afeae340b28323153e2d674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_outside_walls_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.75
+        width: 256.2
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fddcef5df31f8234792942e172e67bf2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_outside_walls_16
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0.75
+        width: 256.2
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b80b61c0306cf0f46abe005f6af9eada
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: city_outside_walls_17
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0.75
+        width: 256.2
+        height: 256.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a420151069dc2a747a8e9316229b7bf3
       vertices: []
       indices: 
       edges: []

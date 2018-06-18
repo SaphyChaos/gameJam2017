@@ -8,7 +8,8 @@ namespace UnityStandardAssets._2D
 	public class Platformer2DUserControl : MonoBehaviour
 	{
 		private PlatformerCharacter2D m_Character;
-		private bool m_Jump;
+		public bool m_Jump;
+        public bool m_Shift;
 		private float hbuff;
 		//rudimentary kill floor setup (KF)
 		public Transform respawn;
@@ -37,6 +38,8 @@ namespace UnityStandardAssets._2D
             }*/
 			if (!m_Jump)
 				m_Jump = Input.GetAxis ("Jump") > 0;
+            if (!m_Shift)
+                m_Shift = Input.GetAxis("Shift") > 0;
 			//if (AP <= 0) {
 				//print ("out of ap!");
 			//	return;
@@ -69,16 +72,19 @@ namespace UnityStandardAssets._2D
 			float input = h;
 			if (Mathf.Abs(hbuff) > Mathf.Abs(input))
 				h = 0;
-			//if (h != 0) {
-			//	AP -= 1;
-			//}
-			//print ("fuckyou");
-			//print (AP);
-			//print(h);
-			//print("are u getting called?!?!?" + " " + h + " " + m_Jump);
-			// Pass all parameters to the character control script.
-			m_Character.Move(h, crouch, m_Jump);
+            //if (h != 0) {
+            //	AP -= 1;
+            //}
+            //print ("fuckyou");
+            //print (AP);
+            //print(h);
+            //print("are u getting called?!?!?" + " " + h + " " + m_Jump);
+            // Pass all parameters to the character control script.
+            if (this.gameObject.GetComponent<onColision>().wall == true)
+                m_Jump = false;
+			m_Character.Move(h, crouch, m_Jump, m_Shift);
 			m_Jump = false;
+            //m_Shift = false;
 			hbuff = input;
 		}
 	}

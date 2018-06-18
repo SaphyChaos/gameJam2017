@@ -126,7 +126,7 @@ namespace UnityStandardAssets._2D
                 }
                 else
                 {
-                    m_Character.Move(0, false, false);
+                    m_Character.Move(0, false, false,false);
                     return;
                 }
             }
@@ -215,7 +215,7 @@ namespace UnityStandardAssets._2D
                     sickRiffAttack();
                     m_Jump = false;
                     canJumpAgain = false;
-                    m_Character.Move(0, false, false);
+                    m_Character.Move(0, false, false,false);
                     AP = 0;
                     return;
                 }
@@ -231,20 +231,20 @@ namespace UnityStandardAssets._2D
                     doBasicAttack();
                     m_Jump = false;
                     canJumpAgain = false;
-                    m_Character.Move(0, false, false);
+                    m_Character.Move(0, false, false,false);
                     AP = 0;
                     return;
                 }
             }
             if (inSelect == true) { 
-                m_Character.Move(0, false, false);
+                m_Character.Move(0, false, false,false);
                 return;
             }
             if (AP <= 0) {
                 //print ("out of ap!");
                 m_sickriff.hitHim = false;
                 m_sickriff.hitHimBasic = false;
-                m_Character.Move(0, false, false);
+                m_Character.Move(0, false, false,false);
 				return;
 			}
 			// Read the inputs.
@@ -261,7 +261,7 @@ namespace UnityStandardAssets._2D
 			//print(h);
             //print("are u getting called?!?!?" + " " + h + " " + m_Jump);
             // Pass all parameters to the character control script.
-			m_Character.Move(h, crouch, m_Jump);
+			m_Character.Move(h, crouch, m_Jump,false);
             if (m_Character.m_Grounded == false)
                 m_Jump = false;
 			hbuff = input;
