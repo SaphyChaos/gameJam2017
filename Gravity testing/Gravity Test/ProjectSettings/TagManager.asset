@@ -60,6 +60,9 @@ TagManager:
   - name: RestofUI
     uniqueID: 3534225057
     locked: 0
+  - name: midGround
+    uniqueID: 918740119
+    locked: 0
   - name: Foreground
     uniqueID: 3870452133
     locked: 0
