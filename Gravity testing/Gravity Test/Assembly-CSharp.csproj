@@ -63,6 +63,7 @@
     <Compile Include="Assets\birdAI.cs" />
     <Compile Include="Assets\combatScript.cs" />
     <Compile Include="Assets\FollowPlayer.cs" />
+    <Compile Include="Assets\fpsDisplay.cs" />
     <Compile Include="Assets\fuckoff.cs" />
     <Compile Include="Assets\inCombatAI.cs" />
     <Compile Include="Assets\inherit.cs" />

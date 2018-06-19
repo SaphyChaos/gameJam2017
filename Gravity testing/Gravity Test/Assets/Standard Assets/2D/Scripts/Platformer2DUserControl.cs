@@ -30,13 +30,14 @@ namespace UnityStandardAssets._2D
 
 		private void Update()
 		{
-			/*if (!m_Jump)
+            //print(m_Character.GetComponent<Rigidbody2D>().velocity);
+            /*if (!m_Jump)
             {
                 // Read the jump input in Update so button presses aren't missed.
 				if (Input.touchCount > 0)
 					m_Jump = true;
             }*/
-			if (!m_Jump)
+            if (!m_Jump)
 				m_Jump = Input.GetAxis ("Jump") > 0;
             if (!m_Shift)
                 m_Shift = Input.GetAxis("Shift") > 0;

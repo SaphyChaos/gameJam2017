@@ -22,6 +22,8 @@ namespace UnityStandardAssets._2D
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 		private float timer;
         private float timePassed;
+        private float r;//r is used for rotation during the shift state
+        private bool bhopBool;
 
         private void Awake()
         {
@@ -35,8 +37,8 @@ namespace UnityStandardAssets._2D
 
         private void FixedUpdate()
         {
+            //print(m_Rigidbody2D.velocity);
             m_Grounded = false;
-
             // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
             // This can be done using layers instead but Sample Assets will not overwrite your project settings.
             Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
@@ -83,8 +85,14 @@ namespace UnityStandardAssets._2D
                 // Move the character
 				if(move !=0)
 					move = Mathf.Sign(move);
-                m_Rigidbody2D.velocity = new Vector2(move*m_MaxSpeed, m_Rigidbody2D.velocity.y);
-
+                if (move == 0 || Mathf.Abs(m_Rigidbody2D.velocity[0]) < Mathf.Abs(move * m_MaxSpeed))
+                {
+                    m_Rigidbody2D.velocity = new Vector2(move * m_MaxSpeed, m_Rigidbody2D.velocity.y);
+                }
+                //else if (move == 0)
+                //{
+                 //   m_Rigidbody2D.velocity = new Vector2(move * m_MaxSpeed, m_Rigidbody2D.velocity.y);
+                //}
                 // If the input is moving the player right and the player is facing left...
                 if (move > 0 && !m_FacingRight)
                 {
@@ -104,37 +112,90 @@ namespace UnityStandardAssets._2D
                 // Add a vertical force to the player.
                 m_Grounded = false;
                 m_Anim.SetBool("Ground", false);
+                bhopBool = true;
 				if(m_Rigidbody2D.velocity[1] < 5)
-                	m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+                	m_Rigidbody2D.AddForce(new Vector2(m_Rigidbody2D.velocity[0], m_JumpForce));
                 if (m_Rigidbody2D.velocity[1] > m_JumpForce)
-                    m_Rigidbody2D.velocity = new Vector2(0f, -m_JumpForce);
+                    m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity[0], -m_JumpForce);
                     
+            }
+            if (!m_Grounded && m_AirControl && !m_Anim.GetBool("Ground"))
+            {
+                //timePassed = timePassed - timer;
+                //timer = Time.time;
+                //timePassed = timePassed + timer;
+                //print(Mathf.Abs(hit.point.y - transform.position.y));
+                if (!jump)
+                {
+                    //print("ha");
+                    bhopBool = true;
+                }
+                //print(m_Rigidbody2D.velocity.y);
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.down, 1000, 12);
+                //print(Mathf.Abs(hit.point.y - transform.position.y));
+                if (bhopBool && m_Rigidbody2D.velocity.y < 0 && jump && Mathf.Abs(hit.point.y - transform.position.y) < 3 && jump && Mathf.Abs(hit.point.y - transform.position.y) > 2.5)
+                {
+                    bhopBool = false;
+                    //print("he");
+                    print(Mathf.Abs(hit.point.y - transform.position.y));
+                }
+                if (!bhopBool && Mathf.Abs(hit.point.y - transform.position.y) < 2.5 && m_Rigidbody2D.velocity.y < 0)
+                {
+                    print("ho");
+                    //print(Mathf.Abs(hit.point.y - transform.position.y));
+                    m_Rigidbody2D.velocity = new Vector2(move * m_MaxSpeed, m_Rigidbody2D.velocity.y);
+                    //this.gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 0, 255);
+                }
+
+                
+
+                //else if (jump && Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 100, 11))
+                //{
+
+                  //  m_Rigidbody2D.velocity = new Vector2(move * m_MaxSpeed, m_Rigidbody2D.velocity.y);
+                    //this.gameObject.GetComponent<SpriteRenderer>().color = new Color(0, 255, 255);
+                //}
             }
             if (m_Grounded && shift && m_Anim.GetBool("Ground"))
             {
                 timePassed = timePassed - timer;
                 timer = Time.time;
                 timePassed = timePassed + timer;
-                print(timePassed);
+                r = timePassed / .75f;
+                //print(timePassed);
                 if (timePassed > .75f)
                 {
-                    print("heh");
+                    //print("heh");
                     this.gameObject.GetComponent<Platformer2DUserControl>().m_Shift = false;
                     timePassed = 0;
+                    this.gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255);
+                    //m_Rigidbody2D.transform.eulerAngles = new Vector3(0, 0, 0);
                 }
                 if (timePassed > .2f)
                 {
+                    //this.gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255);
                     if (Input.GetAxis("Shift") == 0)
+                    {
+                        //m_Rigidbody2D.transform.eulerAngles = new Vector3(0, r, 0);
                         m_Rigidbody2D.velocity = new Vector2(move * m_MaxSpeed * 2, m_Rigidbody2D.velocity.y);
+                        //this.gameObject.GetComponent<SpriteRenderer>().color = new Color(UnityEngine.Random.Range(0f, 1.0f), UnityEngine.Random.Range(0f, 1.0f), UnityEngine.Random.Range(0f, 1.0f));
+                        this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f);
+                    }
                     else
                     {
-                        m_Rigidbody2D.velocity = new Vector2(move * m_MaxSpeed, m_Rigidbody2D.velocity.y);
+                        m_Rigidbody2D.velocity = new Vector2(move * m_MaxSpeed * .5f, m_Rigidbody2D.velocity.y);
                         timePassed = 0;
                         this.gameObject.GetComponent<Platformer2DUserControl>().m_Shift = false;
+                        this.gameObject.GetComponent<SpriteRenderer>().color = new Color(.5f, .5f, .5f);
+                        //m_Rigidbody2D.transform.eulerAngles = new Vector3(0,0,0);
                     }
                 }
                 else
+                {
                     m_Rigidbody2D.velocity = new Vector2(move * m_MaxSpeed * .5f, m_Rigidbody2D.velocity.y);
+                    if(this.gameObject.GetComponent<Platformer2DUserControl>().m_Shift == true)
+                        this.gameObject.GetComponent<SpriteRenderer>().color = new Color(.5f, .5f, .5f);
+                }
                 //timePassed = 0;
             }
 
