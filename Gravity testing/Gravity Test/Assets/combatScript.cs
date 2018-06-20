@@ -12,7 +12,9 @@ namespace UnityStandardAssets._2D
         // Use this for initialization
         void Start()
         {
-            
+            if(dogHP.headShot)
+                enemy1.GetComponent<Bird>().damage(10);
+            dogHP.headShot = false;
         }
 
         // Update is called once per frame

@@ -47,7 +47,8 @@ public class SickRiff : MonoBehaviour {
             tmp.a = 0f;
             this.spriteRenderer.GetComponent<SpriteRenderer>().color = tmp;
             attackGo = false;
-            m_cameraAnimation.Play("cameraAnimation(-1)", -1, 0f);
+            if(!hitHimBasic)
+                m_cameraAnimation.Play("cameraAnimation(-1)", -1, 0f);
             //m_cameraAnimation.Play("default", -1, 0f);
             //fixCamera();
             //this.spriteRenderer.enabled = false;

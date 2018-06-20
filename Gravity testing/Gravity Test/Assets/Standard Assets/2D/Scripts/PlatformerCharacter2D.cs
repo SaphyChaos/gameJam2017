@@ -13,7 +13,7 @@ namespace UnityStandardAssets._2D
         [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
 
         private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
-        const float k_GroundedRadius = 2.3f; // Radius of the overlap circle to determine if grounded
+        const float k_GroundedRadius = 5.2f; // Radius of the overlap circle to determine if grounded was 2.2
         public bool m_Grounded;            // Whether or not the player is grounded.
         private Transform m_CeilingCheck;   // A position marking where to check for ceilings
         const float k_CeilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
@@ -41,7 +41,7 @@ namespace UnityStandardAssets._2D
             m_Grounded = false;
             // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
             // This can be done using layers instead but Sample Assets will not overwrite your project settings.
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
+            Collider2D[] colliders = Physics2D.OverlapBoxAll(m_GroundCheck.position, new Vector2(1.5f, k_GroundedRadius), m_WhatIsGround);
             for (int i = 0; i < colliders.Length; i++)
             {
                 if ((colliders[i].gameObject != gameObject) && (colliders[i].gameObject != GameObject.Find("lineOfSight")))

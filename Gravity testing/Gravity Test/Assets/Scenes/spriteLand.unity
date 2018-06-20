@@ -596,7 +596,7 @@ GameObject:
   - component: {fileID: 234096469}
   - component: {fileID: 234096471}
   - component: {fileID: 234096470}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: lineOfSight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1813,7 +1813,7 @@ GameObject:
   m_Component:
   - component: {fileID: 609704938}
   - component: {fileID: 609704939}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -3316,7 +3316,7 @@ GameObject:
   - component: {fileID: 1438112214}
   - component: {fileID: 1438112215}
   - component: {fileID: 1438112213}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: DumbBird
   m_TagString: Enemy
   m_Icon: {fileID: 0}

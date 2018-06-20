@@ -6,6 +6,7 @@ using System.Collections.Generic;
     public class dogHP : MonoBehaviour
     {
         public static int HP = 50;
+        public static bool headShot = false;
         // Use this for initialization
         void Start()
         {

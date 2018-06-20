@@ -35,7 +35,7 @@ namespace UnityStandardAssets._2D
                 GetComponent<SpawnPlatforms>().Spawn();
                 Destroy(col.gameObject);
             }
-            else if (col.gameObject.tag == "Enemy")
+            else if (col.gameObject.tag == "Enemy" && !animator.GetCurrentAnimatorStateInfo(0).IsName("curtainAnim"))
             {
                 //print("aaaah");
                 //Destroy (col.gameObject);
@@ -49,7 +49,15 @@ namespace UnityStandardAssets._2D
         private void Update()
         {
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("done"))
+            {
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.down, 1000, 1 << LayerMask.NameToLayer("enemy"));
+                if(hit.collider == null)
+                {
+                    print("headshot!");
+                    dogHP.headShot = true;
+                }
                 Application.LoadLevel("Combat");
+            }
         }
     }
 }
