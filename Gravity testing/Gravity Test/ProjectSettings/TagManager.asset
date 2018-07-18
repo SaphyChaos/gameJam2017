@@ -11,6 +11,7 @@ TagManager:
   - AP
   - enemy
   - wall
+  - hitbox
   layers:
   - Default
   - TransparentFX

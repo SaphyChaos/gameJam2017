@@ -12,6 +12,10 @@ namespace UnityStandardAssets._2D
         void OnCollisionStay2D(Collision2D col)
         {
             GameObject varGameObject = GameObject.FindWithTag("Player");
+            if(col.gameObject.name == "head")
+            {
+                this.GetComponent<PlatformerCharacter2D>().m_Grounded = false;
+            }
             if (col.gameObject.tag == "wall")
             {
                 wall = true;
@@ -39,22 +43,42 @@ namespace UnityStandardAssets._2D
             {
                 //print("aaaah");
                 //Destroy (col.gameObject);
+                //print(col.gameObject.name);
                 animator.Play("curtainAnim", -1, 0f);
                 animatorL.Play("curtainAnimLeft", -1, 0f);
                 //rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
+                this.GetComponent<PlatformerCharacter2D>().Move(0f, false, false, false);
                 varGameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll; ;
                 //Application.LoadLevel("Combat");
             }
         }
+        /*
+        void ontriggerstay2d(collider2d col)
+        {
+            print(col.gameobject.tag);
+            if (col.gameobject.tag == "head")
+            {
+                print("headshot!");
+            }
+        }
+        */
         private void Update()
         {
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("done"))
             {
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.down, 1000, 1 << LayerMask.NameToLayer("enemy"));
-                if(hit.collider == null)
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.down, 10000, 1 << LayerMask.NameToLayer("enemy"));
+                //print(hit.collider);
+                if (hit.collider == GameObject.Find("Head").GetComponent<BoxCollider2D>())
                 {
                     print("headshot!");
+                    this.GetComponent<PlatformerCharacter2D>().Move(0f, false, false, false);
                     dogHP.headShot = true;
+                }
+                if (hit.collider == GameObject.Find("Back").GetComponent<BoxCollider2D>())
+                {
+                    print("backstab!");
+                    this.GetComponent<PlatformerCharacter2D>().Move(0f, false, false, false);
+                    dogHP.backStab = true;
                 }
                 Application.LoadLevel("Combat");
             }

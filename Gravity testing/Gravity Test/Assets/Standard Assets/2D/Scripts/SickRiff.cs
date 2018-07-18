@@ -40,7 +40,7 @@ public class SickRiff : MonoBehaviour {
         }
         if ((attackGo == true)&& (animator.GetCurrentAnimatorStateInfo(0).IsName("done")))
         {
-            print("fip");
+            //print("fip");
             //hitbox.enabled = true;
             hitHim = true;
             Color tmp = this.spriteRenderer.GetComponent<SpriteRenderer>().color;
@@ -63,7 +63,8 @@ public class SickRiff : MonoBehaviour {
         //this.spriteRenderer.sprite = sprite2;
         //this.spriteRenderer.enabled = true;
         //this.animator.enabled = true;
-        cameraOrigonalPosition = new Vector3(m_camera.transform.position.x, m_camera.transform.position.y, m_camera.transform.position.z);
+        cameraOrigonalPosition = new Vector3(0f, 0f, 0f);
+        //cameraOrigonalPosition = new Vector3(m_camera.transform.position.x, m_camera.transform.position.y, m_camera.transform.position.z);
         m_cameraAnimation.Play("cameraAnimation(1)", -1, 0f);
         attackGo = true;
         animator.Play("tenor", -1, 0f);
@@ -108,6 +109,28 @@ public class SickRiff : MonoBehaviour {
     }
     public void fixCamera()
     {
-        m_camera.transform.position = new Vector3(cameraOrigonalPosition.x, cameraOrigonalPosition.y, cameraOrigonalPosition.z);
+        print("hm");
+        float x = m_camera.transform.position.x;
+        float y = m_camera.transform.position.y;
+        if (m_camera.transform.position.x < cameraOrigonalPosition.x)
+        {
+            x += 1;
+        }
+        if (m_camera.transform.position.y < cameraOrigonalPosition.y)
+        {
+            y += 1;
+        }
+        if (m_camera.transform.position.x > cameraOrigonalPosition.x)
+        {
+            x -= 1;
+        }
+        if (m_camera.transform.position.y > cameraOrigonalPosition.y)
+        {
+            y -= 1;
+        }
+        if (m_camera.transform.position.y != cameraOrigonalPosition.y || m_camera.transform.position.x != cameraOrigonalPosition.x)
+            fixCamera();
+        //m_camera.transform.position = new Vector3(cameraOrigonalPosition.x, cameraOrigonalPosition.y, cameraOrigonalPosition.z);
+        //print("df");
     }
 }

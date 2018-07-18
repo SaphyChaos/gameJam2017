@@ -19,7 +19,7 @@ namespace UnityStandardAssets._2D
         const float k_CeilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
         private Animator m_Anim;            // Reference to the player's animator component.
         private Rigidbody2D m_Rigidbody2D;
-        private bool m_FacingRight = true;  // For determining which way the player is currently facing.
+        public bool m_FacingRight = true;  // For determining which way the player is currently facing.
 		private float timer;
         private float timePassed;
         private float r;//r is used for rotation during the shift state
@@ -44,8 +44,11 @@ namespace UnityStandardAssets._2D
             Collider2D[] colliders = Physics2D.OverlapBoxAll(m_GroundCheck.position, new Vector2(1.5f, k_GroundedRadius), m_WhatIsGround);
             for (int i = 0; i < colliders.Length; i++)
             {
-                if ((colliders[i].gameObject != gameObject) && (colliders[i].gameObject != GameObject.Find("lineOfSight")))
+                if ((colliders[i].gameObject != gameObject) && (colliders[i].gameObject != GameObject.Find("lineOfSight")) && (colliders[i].gameObject != GameObject.Find("Head")) && (colliders[i].gameObject != GameObject.Find("Back")) && (colliders[i].gameObject != GameObject.Find("DumbBird")))
+                {
+                    //print(colliders[i].gameObject);
                     m_Grounded = true;
+                }
             }
             m_Anim.SetBool("Ground", m_Grounded);
 
@@ -149,7 +152,7 @@ namespace UnityStandardAssets._2D
 
                 
 
-                //else if (jump && Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 100, 11))
+                //else if (jump && Physics.Raycast(transform.poshition, transform.TransformDirection(Vector3.down), out hit, 100, 11))
                 //{
 
                   //  m_Rigidbody2D.velocity = new Vector2(move * m_MaxSpeed, m_Rigidbody2D.velocity.y);
@@ -206,7 +209,7 @@ namespace UnityStandardAssets._2D
         }
 
 
-        private void Flip()
+        public void Flip()
         {
             // Switch the way the player is labelled as facing.
             m_FacingRight = !m_FacingRight;

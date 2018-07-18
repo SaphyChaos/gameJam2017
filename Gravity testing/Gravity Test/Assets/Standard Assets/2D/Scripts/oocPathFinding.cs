@@ -29,12 +29,12 @@ public class oocPathFinding : MonoBehaviour
             pcPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
             if (Player.position.x > m_body.position.x)
             {
-                move = 1;
+                move = 2;
                 m_body.velocity = new Vector2(move, m_body.velocity.y);
             }
             else if (Player.position.x < m_body.position.x)
             {
-                move = -1;
+                move = -2;
                 m_body.velocity = new Vector2(move, m_body.velocity.y); ;
             }
         }

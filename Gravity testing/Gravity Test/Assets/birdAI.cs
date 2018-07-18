@@ -79,13 +79,13 @@ namespace UnityStandardAssets._2D
                 attacking = true;
                 if (birdAnim.GetCurrentAnimatorStateInfo(0).IsName("doneAttack"))
                 {
-                    protag.GetComponent<Platformer2DUserControlCombat>().damage(25);
+                    protag.GetComponent<Platformer2DUserControlCombat>().damage(10);
                     attacking = false;
                     passed = true;
                 }
             }
-            m_body.velocity = new Vector2(move * 2, m_body.velocity.y);
-            birdAP -= 1;
+            m_body.velocity = new Vector2(move * 4, m_body.velocity.y);
+            birdAP -= 2;
 
         }
         private void meleeAttack()

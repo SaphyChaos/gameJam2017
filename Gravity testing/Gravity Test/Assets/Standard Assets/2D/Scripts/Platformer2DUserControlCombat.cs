@@ -36,6 +36,8 @@ namespace UnityStandardAssets._2D
         private bool canJumpAgain = true;
         private bool stillRiffing;
         public bool passed;
+        private Vector3 startPos;
+        //private bool canReset;
 
         void Start () {
 			killFloor = -25.0f;
@@ -56,6 +58,7 @@ namespace UnityStandardAssets._2D
             passed = false;
             m_sickriff.hitHim = false;
             m_sickriff.hitHimBasic = false;
+            startPos = m_Character.transform.position;
         }
 
         private void Update()
@@ -67,6 +70,11 @@ namespace UnityStandardAssets._2D
 					m_Jump = true;
             }*/
             //print(Input.GetAxis("Jump"));
+            if (Input.GetAxis("Attack2") > 0 && !(stillRiffing) && !(inSelect))
+            {
+                AP = APStart;
+                m_Character.transform.position = new Vector3(startPos.x, startPos.y, startPos.z);
+            }
             dogHP.HP = HP;
             if (Input.GetAxis("Jump") == 0)
             {
@@ -85,7 +93,7 @@ namespace UnityStandardAssets._2D
             //textBox.GetComponent<Image>().color = tmp;
             //    return;
             //}
-            if (Input.GetAxis("Submit") != 0)
+            if (Input.GetAxis("Submit") != 0 && !(stillRiffing) && !(inSelect))
             {
                 passed = true;
                 AP = 0;
@@ -256,12 +264,31 @@ namespace UnityStandardAssets._2D
 			if (h != 0) {
 				AP -= 1;
 			}
-			//print ("fuckyou");
-			//print (AP);
-			//print(h);
+            //print ("fuckyou");
+            //print (AP);
+            //print(h);
             //print("are u getting called?!?!?" + " " + h + " " + m_Jump);
             // Pass all parameters to the character control script.
-			m_Character.Move(h, crouch, m_Jump,false);
+            if (AP > 0)
+            {
+                //print("e");
+                m_Character.Move(h, crouch, m_Jump, false);
+            }
+            else if (AP <= 0)
+            {
+                print(AP);
+                if (h > 0 && !m_Character.m_FacingRight)
+                {
+                    // ... flip the player.
+                    m_Character.Flip();
+                }
+                // Otherwise if the input is moving the player left and the player is facing right...
+                else if (h < 0 && m_Character.m_FacingRight)
+                {
+                    // ... flip the player.
+                    m_Character.Flip();
+                }
+            }
             if (m_Character.m_Grounded == false)
                 m_Jump = false;
 			hbuff = input;

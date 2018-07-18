@@ -9,12 +9,16 @@ namespace UnityStandardAssets._2D
         //public Platformer2DUserControlCombat player1;
         public GameObject player1;
         public GameObject enemy1;
+        public static Vector3 startPos;
         // Use this for initialization
         void Start()
         {
             if(dogHP.headShot)
                 enemy1.GetComponent<Bird>().damage(10);
             dogHP.headShot = false;
+            if (dogHP.backStab)
+                enemy1.GetComponent<Bird>().damage(15);
+            dogHP.backStab = false;
         }
 
         // Update is called once per frame
