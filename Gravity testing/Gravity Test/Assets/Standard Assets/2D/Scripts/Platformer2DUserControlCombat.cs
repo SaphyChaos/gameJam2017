@@ -41,7 +41,7 @@ namespace UnityStandardAssets._2D
 
         void Start () {
 			killFloor = -25.0f;
-            HPStart = 50;
+            HPStart = 20;
             HP = dogHP.HP;
 			APStart = 30;
 			AP = 30;
