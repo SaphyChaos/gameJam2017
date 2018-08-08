@@ -62,9 +62,13 @@
     <Compile Include="Assets\Standard Assets\2D\Scripts\AIPatrol.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\AIWalk.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\Bird.cs" />
+    <Compile Include="Assets\Standard Assets\2D\Scripts\birdAI.cs" />
+    <Compile Include="Assets\Standard Assets\2D\Scripts\botAI.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\Camera2DFollow.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\cameraPull.cs" />
+    <Compile Include="Assets\Standard Assets\2D\Scripts\combatScript2.cs" />
+    <Compile Include="Assets\Standard Assets\2D\Scripts\combatScript3.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\dogHP.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\EnemyAttack.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\followcamera.cs" />

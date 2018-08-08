@@ -13,6 +13,6 @@ public class StartGame : MonoBehaviour {
 	void Update () {
 		if (Input.anyKey)
 			//change scene to main game
-			Application.LoadLevel ("rpgFeild");
+			Application.LoadLevel (1);
 	}
 }

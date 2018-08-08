@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 namespace UnityStandardAssets._2D
 {
     public class onColision : MonoBehaviour
@@ -51,6 +52,10 @@ namespace UnityStandardAssets._2D
                 varGameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll; ;
                 //Application.LoadLevel("Combat");
             }
+            else if (col.gameObject.tag == "door")
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
         }
         /*
         void ontriggerstay2d(collider2d col)
@@ -80,7 +85,10 @@ namespace UnityStandardAssets._2D
                     this.GetComponent<PlatformerCharacter2D>().Move(0f, false, false, false);
                     dogHP.backStab = true;
                 }
-                Application.LoadLevel("Combat");
+                //if(SceneManager.GetActiveScene().name == "spriteLand");
+                //    SceneManager.LoadScene("Combat_Dark");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                //Application.LoadLevel("Combat");
             }
         }
     }

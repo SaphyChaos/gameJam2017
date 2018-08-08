@@ -50,12 +50,13 @@ namespace UnityStandardAssets._2D
 				killFloor = transform.position.y - 25.0f;
 			if (transform.position.y < killFloor)
 			{
-				/*
+                /*
 				this.transform.position = respawn.position; 	//respawn at beginning
 				this.transform.rotation = respawn.rotation;
 				killFloor = transform.position.y - 25.0f;
 				*/
-				Application.LoadLevel ("Game Over");
+                //Application.LoadLevel ("Game Over");
+                m_Character.transform.position = new Vector3(-3f, 3f, m_Character.transform.position.z);
 			}
 		}
 

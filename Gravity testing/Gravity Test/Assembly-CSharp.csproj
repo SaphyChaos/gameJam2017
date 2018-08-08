@@ -60,15 +60,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\asdf.cs" />
-    <Compile Include="Assets\birdAI.cs" />
     <Compile Include="Assets\combatScript.cs" />
+    <Compile Include="Assets\combatScript2.cs" />
+    <Compile Include="Assets\copterHover.cs" />
+    <Compile Include="Assets\dogBrain.cs" />
+    <Compile Include="Assets\endGame.cs" />
     <Compile Include="Assets\FollowPlayer.cs" />
     <Compile Include="Assets\fpsDisplay.cs" />
     <Compile Include="Assets\fuckoff.cs" />
+    <Compile Include="Assets\heliScript.cs" />
     <Compile Include="Assets\inCombatAI.cs" />
     <Compile Include="Assets\inherit.cs" />
     <Compile Include="Assets\meterScriptHP.cs" />
+    <Compile Include="Assets\MeterScriptHPEnemy.cs" />
     <Compile Include="Assets\moveSlightly.cs" />
+    <Compile Include="Assets\passedScript.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/kithe/Documents/Unity Projects/gameJam2017/Gravity testing/Gravity Test/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

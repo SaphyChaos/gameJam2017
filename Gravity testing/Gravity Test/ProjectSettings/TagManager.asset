@@ -12,6 +12,8 @@ TagManager:
   - enemy
   - wall
   - hitbox
+  - door
+  - brain
   layers:
   - Default
   - TransparentFX

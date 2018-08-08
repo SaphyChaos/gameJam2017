@@ -102,7 +102,7 @@ public class SickRiff : MonoBehaviour {
         else  if ((col.gameObject.tag == "Enemy") && (hitHim == true))
         {
             //print("ahhh");
-            m_enemy.GetComponent<Bird>().damage(500);
+            m_enemy.GetComponent<Bird>().damage(100);
             hitHim = false;
         }
 

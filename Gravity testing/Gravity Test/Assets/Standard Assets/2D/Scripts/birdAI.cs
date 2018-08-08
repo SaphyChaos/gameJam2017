@@ -45,11 +45,13 @@ namespace UnityStandardAssets._2D
             {
                 birdAnim.Play("Idle", -1, 0f);
                 passed = true;
+                combatScript3.arrayIndex += 1;
             }
             if (birdAP <= 0)
             {
                 birdAnim.Play("Idle", -1, 0f);
                 passed = true;
+                combatScript3.arrayIndex += 1;
             }
             pcPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
             if (Player.position.x > m_body.position.x)
@@ -77,9 +79,10 @@ namespace UnityStandardAssets._2D
                 if (attacking == false)
                     meleeAttack();
                 attacking = true;
-                if (birdAnim.GetCurrentAnimatorStateInfo(0).IsName("doneAttack"))
+                if (birdAnim.GetCurrentAnimatorStateInfo(0).IsName("doneAttack") && passed == false)
                 {
                     protag.GetComponent<Platformer2DUserControlCombat>().damage(10);
+                    print("ss");
                     attacking = false;
                     passed = true;
                 }

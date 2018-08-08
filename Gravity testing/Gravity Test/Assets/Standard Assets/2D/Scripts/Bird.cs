@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 //namespace UnityStandardAssets._2D
 //{
-    public class Bird : MonoBehaviour
+public class Bird : MonoBehaviour
     {
         public float upForce;                   //Upward force of the "flap".
         private bool isDead = false;            //Has the player collided with a wall?
@@ -11,6 +12,8 @@ using System.Collections;
         public Animator curtL;
         public Animator curtR;
         public int healthStart = 100;
+        private int die;
+        private int total;
         //public Sprite deathSprite;
 
         private Animator anim;                  //Reference to the Animator component.
@@ -34,7 +37,8 @@ using System.Collections;
             float h = Input.GetAxis("Horizontal");
             if (curtR.GetCurrentAnimatorStateInfo(0).IsName("curtainAnimBackEnd"))
             {
-                Application.LoadLevel("RPGFieldAfterCombat");
+                //Application.LoadLevel("RPGFieldAfterCombat");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
             //anim.SetFloat("Speed", Mathf.Abs(1));
             //if (isDead == false) {
@@ -51,8 +55,21 @@ using System.Collections;
         }
         public void damage(int x)
         {
-            //print(health);
-            health -= x;
+        //print(health);
+        total = 0;
+        die = Random.Range(1, 7);
+        total += die;
+        die = Random.Range(1, 7);
+        total += die;
+        die = Random.Range(1, 7);
+        total += die;
+        die = Random.Range(0, 2);
+        if (die == 0)
+            x -= x / total;
+        else
+            x += x / total;
+        print(total);
+        health -= x;
             if (health <= 0)
             {
                 print("dead!");

@@ -14,7 +14,7 @@ public class fuckoff : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        i -= 10;
+        i -= 15;
         myVector = new Vector3(0, 0, i);
         Quaternion deltaRotation = Quaternion.Euler(myVector * Time.deltaTime);
         m_Rigidbody.MoveRotation(m_Rigidbody.rotation * deltaRotation);
